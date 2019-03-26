@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowBuilder Version="2.4.0-preview">
+  <Workflow xmlns:q1="clr-namespace:Bonsai.IO;assembly=Bonsai.System" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:q2="clr-namespace:Bonsai.Scripting;assembly=Bonsai.Scripting" xmlns="https://bonsai-rx.org/2018/workflow">
+    <Nodes>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="q1:SerialStringRead">
+          <q1:PortName>COM5</q1:PortName>
+          <q1:NewLine>\n</q1:NewLine>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="q1:SerialStringWrite">
+          <q1:PortName>COM5</q1:PortName>
+          <q1:NewLine>\r</q1:NewLine>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="StringProperty">
+          <Value>c0</Value>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Parse">
+        <Pattern>%i\t%i\t%i\t</Pattern>
+      </Expression>
+      <Expression xsi:type="Condition">
+        <Name>Check full data</Name>
+        <Description>Checks that the full data has come through before allowing parsing</Description>
+        <Workflow>
+          <Nodes>
+            <Expression xsi:type="q2:PythonTransform">
+              <q2:Script>@returns(bool)
+def process(value):
+  mylist = value.split("\t")
+  numel = len(mylist)
+  if numel == 4:
+    return True
+  else:
+    return False
+</q2:Script>
+            </Expression>
+            <Expression xsi:type="WorkflowInput">
+              <Name>Source1</Name>
+            </Expression>
+            <Expression xsi:type="WorkflowOutput" />
+          </Nodes>
+          <Edges>
+            <Edge From="0" To="2" Label="Source1" />
+            <Edge From="1" To="0" Label="Source1" />
+          </Edges>
+        </Workflow>
+      </Expression>
+    </Nodes>
+    <Edges>
+      <Edge From="0" To="4" Label="Source1" />
+      <Edge From="2" To="1" Label="Source1" />
+      <Edge From="4" To="3" Label="Source1" />
+    </Edges>
+  </Workflow>
+  <ExtensionTypes>
+    <Type>Bonsai.IO.SerialStringRead, Bonsai.System, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.IO.SerialStringWrite, Bonsai.System, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Expressions.StringProperty, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Expressions.ParseBuilder, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Scripting.PythonTransform, Bonsai.Scripting, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+  </ExtensionTypes>
+</WorkflowBuilder>

@@ -1,0 +1,16 @@
+DotMotion,2019-03-21T12:57:50.1932544+00:00
+{Id=6, Duration=2, Colour1=0, Colour2=1, Contrast=1, numDots1=300, numDots2=0, VelocityX=-25, VelocityY=-43.3, Coherence=100, dotLifetime=20, dotLifetimeBool=0, size=2},2019-03-21T12:57:52.2695808+00:00
+{Id=7, Duration=2, Colour1=0, Colour2=1, Contrast=1, numDots1=1200, numDots2=0, VelocityX=-25, VelocityY=-43.3, Coherence=100, dotLifetime=20, dotLifetimeBool=0, size=1},2019-03-21T12:57:56.2717312+00:00
+{Id=0, Duration=2, Colour1=0, Colour2=1, Contrast=1, numDots1=300, numDots2=0, VelocityX=50, VelocityY=0, Coherence=100, dotLifetime=20, dotLifetimeBool=0, size=2},2019-03-21T12:57:59.2758656+00:00
+{Id=1, Duration=2, Colour1=0, Colour2=1, Contrast=1, numDots1=1200, numDots2=0, VelocityX=50, VelocityY=0, Coherence=100, dotLifetime=20, dotLifetimeBool=0, size=1},2019-03-21T12:58:02.2924032+00:00
+{Id=8, Duration=2, Colour1=0, Colour2=1, Contrast=1, numDots1=4800, numDots2=0, VelocityX=-25, VelocityY=-43.3, Coherence=100, dotLifetime=20, dotLifetimeBool=0, size=0.5},2019-03-21T12:58:05.3091328+00:00
+{Id=17, Duration=2, Colour1=0, Colour2=1, Contrast=1, numDots1=4800, numDots2=0, VelocityX=25, VelocityY=43.3, Coherence=100, dotLifetime=20, dotLifetimeBool=0, size=0.5},2019-03-21T12:58:08.3258368+00:00
+{Id=3, Duration=2, Colour1=0, Colour2=1, Contrast=1, numDots1=300, numDots2=0, VelocityX=25, VelocityY=-43.3, Coherence=100, dotLifetime=20, dotLifetimeBool=0, size=2},2019-03-21T12:58:11.3433728+00:00
+{Id=14, Duration=2, Colour1=0, Colour2=1, Contrast=1, numDots1=4800, numDots2=0, VelocityX=-25, VelocityY=43.3, Coherence=100, dotLifetime=20, dotLifetimeBool=0, size=0.5},2019-03-21T12:58:14.3603328+00:00
+{Id=15, Duration=2, Colour1=0, Colour2=1, Contrast=1, numDots1=300, numDots2=0, VelocityX=25, VelocityY=43.3, Coherence=100, dotLifetime=20, dotLifetimeBool=0, size=2},2019-03-21T12:58:17.3768576+00:00
+{Id=9, Duration=2, Colour1=0, Colour2=1, Contrast=1, numDots1=300, numDots2=0, VelocityX=-50, VelocityY=0, Coherence=100, dotLifetime=20, dotLifetimeBool=0, size=2},2019-03-21T12:58:20.3928192+00:00
+{Id=2, Duration=2, Colour1=0, Colour2=1, Contrast=1, numDots1=4800, numDots2=0, VelocityX=50, VelocityY=0, Coherence=100, dotLifetime=20, dotLifetimeBool=0, size=0.5},2019-03-21T12:58:23.4099584+00:00
+{Id=16, Duration=2, Colour1=0, Colour2=1, Contrast=1, numDots1=1200, numDots2=0, VelocityX=25, VelocityY=43.3, Coherence=100, dotLifetime=20, dotLifetimeBool=0, size=1},2019-03-21T12:58:26.4364928+00:00
+{Id=5, Duration=2, Colour1=0, Colour2=1, Contrast=1, numDots1=4800, numDots2=0, VelocityX=25, VelocityY=-43.3, Coherence=100, dotLifetime=20, dotLifetimeBool=0, size=0.5},2019-03-21T12:58:29.4465024+00:00
+{Id=4, Duration=2, Colour1=0, Colour2=1, Contrast=1, numDots1=1200, numDots2=0, VelocityX=25, VelocityY=-43.3, Coherence=100, dotLifetime=20, dotLifetimeBool=0, size=1},2019-03-21T12:58:32.4602624+00:00
+{Id=10, Duration=2, Colour1=0, Colour2=1, Contrast=1, numDots1=1200, numDots2=0, VelocityX=-50, VelocityY=0, Coherence=100, dotLifetime=20, dotLifetimeBool=0, size=1},2019-03-21T12:58:35.4771584+00:00

@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowBuilder Version="2.4.0-preview">
+  <Workflow xmlns:q1="clr-namespace:Bonsai.Scripting;assembly=Bonsai.Scripting" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="https://bonsai-rx.org/2018/workflow">
+    <Nodes>
+      <Expression xsi:type="WorkflowInput">
+        <Name>Source1</Name>
+      </Expression>
+      <Expression xsi:type="WorkflowOutput" />
+      <Expression xsi:type="MemberSelector">
+        <Selector>Index</Selector>
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Value.Duration</Selector>
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Value.Size</Selector>
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Value.Colour1</Selector>
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Value.Contrast</Selector>
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Value.VelocityX</Selector>
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Value.VelocityY</Selector>
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Value.VelocityZ</Selector>
+      </Expression>
+      <Expression xsi:type="GetValueOrDefault">
+        <Operand xsi:type="FloatProperty">
+          <Value>1</Value>
+        </Operand>
+      </Expression>
+      <Expression xsi:type="GetValueOrDefault">
+        <Operand xsi:type="FloatProperty">
+          <Value>1</Value>
+        </Operand>
+      </Expression>
+      <Expression xsi:type="GetValueOrDefault">
+        <Operand xsi:type="FloatProperty">
+          <Value>1</Value>
+        </Operand>
+      </Expression>
+      <Expression xsi:type="GetValueOrDefault">
+        <Operand xsi:type="FloatProperty">
+          <Value>1</Value>
+        </Operand>
+      </Expression>
+      <Expression xsi:type="GetValueOrDefault">
+        <Operand xsi:type="FloatProperty">
+          <Value>0</Value>
+        </Operand>
+      </Expression>
+      <Expression xsi:type="GetValueOrDefault">
+        <Operand xsi:type="FloatProperty">
+          <Value>0</Value>
+        </Operand>
+      </Expression>
+      <Expression xsi:type="GetValueOrDefault">
+        <Operand xsi:type="FloatProperty">
+          <Value>0</Value>
+        </Operand>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="Zip" />
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="Zip" />
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="Zip" />
+      </Expression>
+      <Expression xsi:type="q1:ExpressionTransform">
+        <q1:Expression>new(
+Item1.Item1 as Id,
+Item1.Item2 as Duration,
+Item1.Item3 as Colour1,
+Item1.Item4 as Colour2,
+Item1.Item5 as Contrast,
+Item1.Item6 as numDots1,
+Item1.Item7 as numDots2,
+Item2.Item1 as VelocityX,
+Item2.Item2 as VelocityY,
+Item2.Item3 as Coherence,
+Item2.Item4 as dotLifetime,
+Item2.Item5 as dotLifetimeBool,
+Item2.Item6 as size)</q1:Expression>
+      </Expression>
+      <Expression xsi:type="ExternalizedProperty">
+        <MemberName>Value</MemberName>
+        <Name>Duration</Name>
+        <Description>The duration of the trial.</Description>
+        <Category>Default</Category>
+      </Expression>
+      <Expression xsi:type="ExternalizedProperty">
+        <MemberName>Value</MemberName>
+        <Name>Size</Name>
+        <Category>Default</Category>
+      </Expression>
+      <Expression xsi:type="ExternalizedProperty">
+        <MemberName>Value</MemberName>
+        <Name>Colour1</Name>
+        <Category>Default</Category>
+      </Expression>
+      <Expression xsi:type="ExternalizedProperty">
+        <MemberName>Value</MemberName>
+        <Name>Contrast</Name>
+        <Category>Default</Category>
+      </Expression>
+      <Expression xsi:type="ExternalizedProperty">
+        <MemberName>Value</MemberName>
+        <Name>VelX</Name>
+        <Category>Default</Category>
+      </Expression>
+      <Expression xsi:type="ExternalizedProperty">
+        <MemberName>Value</MemberName>
+        <Name>VelY</Name>
+        <Category>Default</Category>
+      </Expression>
+      <Expression xsi:type="ExternalizedProperty">
+        <MemberName>Value</MemberName>
+        <Name>VelZ</Name>
+        <Category>Default</Category>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="ElementIndex" />
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Value.Coherence</Selector>
+      </Expression>
+      <Expression xsi:type="GetValueOrDefault">
+        <Operand xsi:type="FloatProperty">
+          <Value>100</Value>
+        </Operand>
+      </Expression>
+      <Expression xsi:type="ExternalizedProperty">
+        <MemberName>Value</MemberName>
+        <Name>Coherence</Name>
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Value.numDots1</Selector>
+      </Expression>
+      <Expression xsi:type="GetValueOrDefault">
+        <Operand xsi:type="FloatProperty">
+          <Value>200</Value>
+        </Operand>
+      </Expression>
+      <Expression xsi:type="ExternalizedProperty">
+        <MemberName>Value</MemberName>
+        <Name>numDots1</Name>
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Value.dotLifetime</Selector>
+      </Expression>
+      <Expression xsi:type="GetValueOrDefault">
+        <Operand xsi:type="IntProperty">
+          <Value>1000</Value>
+        </Operand>
+      </Expression>
+      <Expression xsi:type="ExternalizedProperty">
+        <MemberName>Value</MemberName>
+        <Name>dotLifetime</Name>
+      </Expression>
+      <Expression xsi:type="ExternalizedProperty">
+        <MemberName>Value</MemberName>
+        <Name>dotLifeBool</Name>
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Value.dotLifeBool</Selector>
+      </Expression>
+      <Expression xsi:type="GetValueOrDefault">
+        <Operand xsi:type="IntProperty">
+          <Value>0</Value>
+        </Operand>
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Value.numDots2</Selector>
+      </Expression>
+      <Expression xsi:type="GetValueOrDefault">
+        <Operand xsi:type="FloatProperty">
+          <Value>0</Value>
+        </Operand>
+      </Expression>
+      <Expression xsi:type="ExternalizedProperty">
+        <MemberName>Value</MemberName>
+        <Name>numDots2</Name>
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Value.Colour2</Selector>
+      </Expression>
+      <Expression xsi:type="GetValueOrDefault">
+        <Operand xsi:type="FloatProperty">
+          <Value>0</Value>
+        </Operand>
+      </Expression>
+      <Expression xsi:type="ExternalizedProperty">
+        <MemberName>Value</MemberName>
+        <Name>Colour2</Name>
+        <Category>Default</Category>
+      </Expression>
+    </Nodes>
+    <Edges>
+      <Edge From="0" To="28" Label="Source1" />
+      <Edge From="2" To="17" Label="Source1" />
+      <Edge From="3" To="10" Label="Source1" />
+      <Edge From="4" To="11" Label="Source1" />
+      <Edge From="5" To="12" Label="Source1" />
+      <Edge From="6" To="13" Label="Source1" />
+      <Edge From="7" To="14" Label="Source1" />
+      <Edge From="8" To="15" Label="Source1" />
+      <Edge From="9" To="16" Label="Source1" />
+      <Edge From="10" To="17" Label="Source2" />
+      <Edge From="11" To="18" Label="Source6" />
+      <Edge From="12" To="17" Label="Source3" />
+      <Edge From="13" To="17" Label="Source5" />
+      <Edge From="14" To="18" Label="Source1" />
+      <Edge From="15" To="18" Label="Source2" />
+      <Edge From="17" To="19" Label="Source1" />
+      <Edge From="18" To="19" Label="Source2" />
+      <Edge From="19" To="20" Label="Source1" />
+      <Edge From="20" To="1" Label="Source1" />
+      <Edge From="21" To="10" Label="Source2" />
+      <Edge From="22" To="11" Label="Source2" />
+      <Edge From="23" To="12" Label="Source2" />
+      <Edge From="24" To="13" Label="Source2" />
+      <Edge From="25" To="14" Label="Source2" />
+      <Edge From="26" To="15" Label="Source2" />
+      <Edge From="27" To="16" Label="Source2" />
+      <Edge From="28" To="2" Label="Source1" />
+      <Edge From="28" To="3" Label="Source1" />
+      <Edge From="28" To="4" Label="Source1" />
+      <Edge From="28" To="5" Label="Source1" />
+      <Edge From="28" To="6" Label="Source1" />
+      <Edge From="28" To="7" Label="Source1" />
+      <Edge From="28" To="8" Label="Source1" />
+      <Edge From="28" To="9" Label="Source1" />
+      <Edge From="28" To="29" Label="Source1" />
+      <Edge From="28" To="32" Label="Source1" />
+      <Edge From="28" To="35" Label="Source1" />
+      <Edge From="28" To="39" Label="Source1" />
+      <Edge From="28" To="41" Label="Source1" />
+      <Edge From="28" To="44" Label="Source1" />
+      <Edge From="29" To="30" Label="Source1" />
+      <Edge From="30" To="18" Label="Source3" />
+      <Edge From="31" To="30" Label="Source2" />
+      <Edge From="32" To="33" Label="Source1" />
+      <Edge From="33" To="17" Label="Source6" />
+      <Edge From="34" To="33" Label="Source2" />
+      <Edge From="35" To="36" Label="Source2" />
+      <Edge From="36" To="18" Label="Source4" />
+      <Edge From="37" To="36" Label="Source2" />
+      <Edge From="38" To="40" Label="Source2" />
+      <Edge From="39" To="40" Label="Source1" />
+      <Edge From="40" To="18" Label="Source5" />
+      <Edge From="41" To="42" Label="Source1" />
+      <Edge From="42" To="17" Label="Source7" />
+      <Edge From="43" To="42" Label="Source2" />
+      <Edge From="44" To="45" Label="Source1" />
+      <Edge From="45" To="17" Label="Source4" />
+      <Edge From="46" To="45" Label="Source2" />
+    </Edges>
+  </Workflow>
+  <ExtensionTypes>
+    <Type>Bonsai.Expressions.GetValueOrDefaultBuilder, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Expressions.FloatProperty, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Reactive.Zip, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Scripting.ExpressionTransform, Bonsai.Scripting, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Reactive.ElementIndex, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Expressions.IntProperty, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+  </ExtensionTypes>
+</WorkflowBuilder>

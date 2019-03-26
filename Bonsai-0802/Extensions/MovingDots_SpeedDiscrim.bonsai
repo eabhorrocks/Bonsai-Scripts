@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowBuilder Version="2.4.0-preview">
+  <Workflow xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://bonsai-rx.org/2018/workflow">
+    <Nodes>
+      <Expression xsi:type="WorkflowInput">
+        <Name>Source1</Name>
+      </Expression>
+      <Expression xsi:type="WorkflowOutput" />
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="Zip" />
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="FloatProperty">
+          <Value>150</Value>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="PropertyMapping">
+        <PropertyMappings>
+          <Property Name="numDots" />
+        </PropertyMappings>
+      </Expression>
+      <Expression xsi:type="ExternalizedMapping">
+        <Property Name="Value" DisplayName="nDotsBlack" />
+      </Expression>
+      <Expression xsi:type="Divide">
+        <Operand xsi:type="FloatProperty">
+          <Value>2</Value>
+        </Operand>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="FloatProperty">
+          <Value>150</Value>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="ExternalizedMapping">
+        <Property Name="Value" DisplayName="nDotsWhite" />
+      </Expression>
+      <Expression xsi:type="Divide">
+        <Operand xsi:type="FloatProperty">
+          <Value>2</Value>
+        </Operand>
+      </Expression>
+      <Expression xsi:type="PropertyMapping">
+        <PropertyMappings>
+          <Property Name="numDots" />
+        </PropertyMappings>
+      </Expression>
+      <Expression xsi:type="ExternalizedMapping">
+        <Property Name="ColorA" />
+        <Property Name="Diameter" />
+        <Property Name="VelocityX" />
+        <Property Name="VelocityY" />
+        <Property Name="Coherence" />
+        <Property Name="dotLifetime" />
+        <Property Name="dotLifetimeBool" />
+      </Expression>
+      <Expression xsi:type="IncludeWorkflow" Path="Extensions\MovingBlackDots.bonsai">
+        <LocationX>0.5</LocationX>
+        <LocationY>0</LocationY>
+        <ColorA>1</ColorA>
+        <Diameter>2</Diameter>
+        <VelocityX>0.5</VelocityX>
+        <VelocityY>0</VelocityY>
+        <Coherence>0</Coherence>
+        <numDots>75</numDots>
+        <dotLifetime>0</dotLifetime>
+        <dotLifetimeBool>0</dotLifetimeBool>
+      </Expression>
+      <Expression xsi:type="IncludeWorkflow" Path="Extensions\MovingWhiteDots.bonsai">
+        <LocationX>0.5</LocationX>
+        <LocationY>0</LocationY>
+        <ColorA>1</ColorA>
+        <Diameter>2</Diameter>
+        <VelocityX>0.5</VelocityX>
+        <VelocityY>0</VelocityY>
+        <Coherence>0</Coherence>
+        <numDots>75</numDots>
+        <dotLifetime>0</dotLifetime>
+        <dotLifetimeBool>0</dotLifetimeBool>
+      </Expression>
+      <Expression xsi:type="IncludeWorkflow" Path="Extensions\MovingWhiteDots.bonsai">
+        <LocationX>0.5</LocationX>
+        <LocationY>0</LocationY>
+        <ColorA>1</ColorA>
+        <Diameter>2</Diameter>
+        <VelocityX>0.5</VelocityX>
+        <VelocityY>0</VelocityY>
+        <Coherence>0</Coherence>
+        <numDots>75</numDots>
+        <dotLifetime>0</dotLifetime>
+        <dotLifetimeBool>0</dotLifetimeBool>
+      </Expression>
+      <Expression xsi:type="IncludeWorkflow" Path="Extensions\MovingBlackDots.bonsai">
+        <LocationX>0.5</LocationX>
+        <LocationY>0</LocationY>
+        <ColorA>1</ColorA>
+        <Diameter>2</Diameter>
+        <VelocityX>0.5</VelocityX>
+        <VelocityY>0</VelocityY>
+        <Coherence>0</Coherence>
+        <numDots>75</numDots>
+        <dotLifetime>0</dotLifetime>
+        <dotLifetimeBool>0</dotLifetimeBool>
+      </Expression>
+    </Nodes>
+    <Edges>
+      <Edge From="0" To="15" Label="Source1" />
+      <Edge From="0" To="14" Label="Source1" />
+      <Edge From="0" To="13" Label="Source1" />
+      <Edge From="0" To="12" Label="Source1" />
+      <Edge From="2" To="1" Label="Source1" />
+      <Edge From="3" To="6" Label="Source1" />
+      <Edge From="4" To="15" Label="Source2" />
+      <Edge From="4" To="12" Label="Source2" />
+      <Edge From="5" To="3" Label="Source1" />
+      <Edge From="6" To="4" Label="Source1" />
+      <Edge From="7" To="9" Label="Source1" />
+      <Edge From="8" To="7" Label="Source1" />
+      <Edge From="9" To="10" Label="Source1" />
+      <Edge From="10" To="14" Label="Source2" />
+      <Edge From="10" To="13" Label="Source2" />
+      <Edge From="11" To="12" Label="Source3" />
+      <Edge From="11" To="13" Label="Source3" />
+      <Edge From="11" To="14" Label="Source3" />
+      <Edge From="11" To="15" Label="Source3" />
+      <Edge From="12" To="2" Label="Source4" />
+      <Edge From="13" To="2" Label="Source3" />
+      <Edge From="14" To="2" Label="Source2" />
+      <Edge From="15" To="2" Label="Source1" />
+    </Edges>
+  </Workflow>
+  <ExtensionTypes>
+    <Type>Bonsai.Reactive.Zip, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Expressions.FloatProperty, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Expressions.DivideBuilder, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+  </ExtensionTypes>
+</WorkflowBuilder>

@@ -1,0 +1,3 @@
+DotMotion,2019-03-21T12:56:31.0109568+00:00
+{Id=0, Duration=3, Colour1=1, Colour2=0, Contrast=1, numDots1=50, numDots2=0, VelocityX=50, VelocityY=0, Coherence=100, dotLifetime=20, dotLifetimeBool=0, size=2},2019-03-21T12:56:33.3672192+00:00
+{Id=1, Duration=3, Colour1=1, Colour2=0, Contrast=1, numDots1=500, numDots2=0, VelocityX=50, VelocityY=0, Coherence=100, dotLifetime=20, dotLifetimeBool=0, size=0.5},2019-03-21T12:56:37.3117696+00:00

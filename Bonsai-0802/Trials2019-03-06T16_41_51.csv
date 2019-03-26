@@ -1,0 +1,4 @@
+DotMotion,2019-03-06T16:41:51.4440832+00:00
+{Id=0, Duration=1, Colour1=1, Colour2=0, Contrast=1, numDots1=100, numDots2=100, VelocityX=0.5, VelocityY=0, Coherence=100, dotLifetime=20, dotLifetimeBool=0, size=1},2019-03-06T16:41:51.6184320+00:00
+{Id=1, Duration=1, Colour1=1, Colour2=0, Contrast=1, numDots1=100, numDots2=100, VelocityX=0, VelocityY=0.5, Coherence=100, dotLifetime=20, dotLifetimeBool=0, size=1},2019-03-06T16:41:53.5136512+00:00
+{Id=1, Duration=1, Colour1=1, Colour2=0, Contrast=1, numDots1=100, numDots2=100, VelocityX=0, VelocityY=0.5, Coherence=100, dotLifetime=20, dotLifetimeBool=0, size=1},2019-03-06T16:41:55.5191424+00:00
