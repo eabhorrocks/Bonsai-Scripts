@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowBuilder Version="2.4.0-preview">
+  <Workflow xmlns:q1="clr-namespace:Bonsai.Windows.Input;assembly=Bonsai.Windows.Input" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="https://bonsai-rx.org/2018/workflow">
+    <Nodes>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="q1:KeyDown">
+          <q1:Filter>Q</q1:Filter>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="q1:KeyDown">
+          <q1:Filter>W</q1:Filter>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="FloatProperty">
+          <Value>1</Value>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="FloatProperty">
+          <Value>1</Value>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="Timer">
+          <DueTime>PT2S</DueTime>
+          <Period>PT0.2S</Period>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="ElementCountWindow">
+          <Count>5</Count>
+          <Skip>1</Skip>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Accumulate" />
+      <Expression xsi:type="Accumulate" />
+      <Expression xsi:type="BehaviorSubject">
+        <Name>rlicks</Name>
+      </Expression>
+      <Expression xsi:type="BehaviorSubject">
+        <Name>llicks</Name>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="ElementCountWindow">
+          <Count>5</Count>
+          <Skip>1</Skip>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="BehaviorSubject">
+        <Name>lickometer</Name>
+      </Expression>
+      <Expression xsi:type="SelectMany">
+        <Workflow>
+          <Nodes>
+            <Expression xsi:type="WorkflowInput">
+              <Name>Source1</Name>
+            </Expression>
+            <Expression xsi:type="WorkflowOutput" />
+            <Expression xsi:type="SubscribeSubject">
+              <Name>llicks</Name>
+            </Expression>
+            <Expression xsi:type="SubscribeSubject">
+              <Name>rlicks</Name>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="FloatProperty">
+                <Value>1</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="FloatProperty">
+                <Value>1</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="CombineLatest" />
+            </Expression>
+            <Expression xsi:type="Add" />
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="Skip">
+                <Count>1</Count>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="Skip">
+                <Count>1</Count>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Accumulate" />
+            <Expression xsi:type="Accumulate" />
+            <Expression xsi:type="Multiply">
+              <Operand xsi:type="FloatProperty">
+                <Value>0.1</Value>
+              </Operand>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="FloatProperty">
+                <Value>0</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="Merge" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="Merge" />
+            </Expression>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="Value" />
+            </Expression>
+          </Nodes>
+          <Edges>
+            <Edge From="0" To="13" Label="Source1" />
+            <Edge From="2" To="9" Label="Source1" />
+            <Edge From="3" To="8" Label="Source1" />
+            <Edge From="4" To="14" Label="Source1" />
+            <Edge From="5" To="15" Label="Source1" />
+            <Edge From="6" To="7" Label="Source1" />
+            <Edge From="7" To="12" Label="Source1" />
+            <Edge From="8" To="4" Label="Source1" />
+            <Edge From="9" To="5" Label="Source1" />
+            <Edge From="10" To="6" Label="Source1" />
+            <Edge From="11" To="6" Label="Source2" />
+            <Edge From="12" To="1" Label="Source1" />
+            <Edge From="13" To="14" Label="Source2" />
+            <Edge From="13" To="15" Label="Source2" />
+            <Edge From="14" To="10" Label="Source1" />
+            <Edge From="15" To="11" Label="Source1" />
+            <Edge From="16" To="12" Label="Source2" />
+          </Edges>
+        </Workflow>
+      </Expression>
+      <Expression xsi:type="SelectMany">
+        <Workflow>
+          <Nodes>
+            <Expression xsi:type="WorkflowInput">
+              <Name>Source1</Name>
+            </Expression>
+            <Expression xsi:type="WorkflowOutput" />
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="Average" />
+            </Expression>
+          </Nodes>
+          <Edges>
+            <Edge From="0" To="2" Label="Source1" />
+            <Edge From="2" To="1" Label="Source1" />
+          </Edges>
+        </Workflow>
+      </Expression>
+    </Nodes>
+    <Edges>
+      <Edge From="0" To="2" Label="Source1" />
+      <Edge From="1" To="3" Label="Source1" />
+      <Edge From="2" To="6" Label="Source1" />
+      <Edge From="3" To="7" Label="Source1" />
+      <Edge From="4" To="5" Label="Source1" />
+      <Edge From="5" To="12" Label="Source1" />
+      <Edge From="6" To="8" Label="Source1" />
+      <Edge From="7" To="9" Label="Source1" />
+      <Edge From="10" To="13" Label="Source1" />
+      <Edge From="12" To="10" Label="Source1" />
+      <Edge From="13" To="11" Label="Source1" />
+    </Edges>
+  </Workflow>
+  <ExtensionTypes>
+    <Type>Bonsai.Windows.Input.KeyDown, Bonsai.Windows.Input, Version=2.2.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Expressions.FloatProperty, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Reactive.Timer, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Reactive.ElementCountWindow, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Reactive.AccumulateBuilder, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Reactive.CombineLatest, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Expressions.AddBuilder, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Reactive.Skip, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Expressions.MultiplyBuilder, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Reactive.Merge, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Reactive.Average, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+  </ExtensionTypes>
+</WorkflowBuilder>

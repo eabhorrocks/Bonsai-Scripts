@@ -414,7 +414,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="FloatProperty">
-                <Value>30</Value>
+                <Value>10</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="ReplaySubject">
@@ -423,7 +423,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="FloatProperty">
-                <Value>-30</Value>
+                <Value>-10</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="ReplaySubject">
@@ -432,7 +432,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="FloatProperty">
-                <Value>-30</Value>
+                <Value>-10</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="ReplaySubject">
@@ -441,7 +441,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="FloatProperty">
-                <Value>30</Value>
+                <Value>10</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="ReplaySubject">
@@ -488,10 +488,10 @@
             </Expression>
             <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.PrimitiveResources.bonsai" />
             <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.OrthographicViewport.bonsai">
-              <Left>-30</Left>
-              <Right>30</Right>
-              <Bottom>-30</Bottom>
-              <Top>30</Top>
+              <Left>-10</Left>
+              <Right>10</Right>
+              <Bottom>-10</Bottom>
+              <Top>10</Top>
             </Expression>
           </Nodes>
           <Edges>

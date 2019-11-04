@@ -1,113 +1,113 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EditorSettings>
-  <WindowState>Maximized</WindowState>
+  <WindowState>Normal</WindowState>
   <EditorTheme>Light</EditorTheme>
   <DesktopBounds>
-    <X>180</X>
-    <Y>27</Y>
-    <Width>1286</Width>
-    <Height>940</Height>
+    <X>256</X>
+    <Y>0</Y>
+    <Width>1670</Width>
+    <Height>866</Height>
   </DesktopBounds>
   <RecentlyUsedFiles>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-27T18:48:11.3727785+00:00</Timestamp>
-      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\speedDisc-PASSIVE_REWARD2.bonsai</Name>
+      <Timestamp>2019-10-29T16:17:17.8262837+00:00</Timestamp>
+      <Name>X:\ibn-vision\CODE\DEV\BONSAI\Ste\2_Ste_VR_CL_Train_Corridor&amp;Sphere_20190805-ffmpeg.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-27T18:30:03.2628745+00:00</Timestamp>
-      <Name>X:\ibn-vision\CODE\DEV\BONSAI\Edd\Bonsai-0802\speedDisc-PASSIVE_REWARD.bonsai</Name>
+      <Timestamp>2019-10-29T15:45:21.6029312+00:00</Timestamp>
+      <Name>X:\ibn-vision\CODE\DEV\BONSAI\Tom\SweepsLoomFlashesContrastsAndISIs.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-27T18:27:35.3074023+00:00</Timestamp>
-      <Name>X:\ibn-vision\CODE\DEV\BONSAI\Edd\Bonsai-0802\arduinoDue-Comm2lick.bonsai</Name>
+      <Timestamp>2019-06-10T16:22:34.9205143+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\SpeedDiscrimination_workflow3.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-27T18:27:27.8730489+00:00</Timestamp>
-      <Name>X:\ibn-vision\CODE\DEV\BONSAI\Edd\Bonsai-0802\arduinoDue-Comm.bonsai</Name>
+      <Timestamp>2019-06-03T11:58:42.5740755+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\SpeedDiscrimination_workflow2.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-21T13:19:00.9414403+00:00</Timestamp>
-      <Name>C:\Users\edward.horrocks\Desktop\Bonsai-0802\arduinoDue-Comm2lick.bonsai</Name>
+      <Timestamp>2019-05-30T13:58:12.3187547+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\lickometer test.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-21T13:18:18.4469625+00:00</Timestamp>
-      <Name>C:\Users\edward.horrocks\Desktop\Bonsai-0802\arduinoDue-Comm.bonsai</Name>
+      <Timestamp>2019-05-30T13:45:21.5708216+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\lickometer-test.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-21T13:04:53.9018118+00:00</Timestamp>
-      <Name>C:\Users\edward.horrocks\Desktop\Bonsai-0802\dotMotion-ephys-densities2.bonsai</Name>
+      <Timestamp>2019-05-17T10:37:57.0821211+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\MotionCoherence_degrees.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-21T12:56:26.4696826+00:00</Timestamp>
-      <Name>C:\Users\edward.horrocks\Desktop\Bonsai-0802\dotMotion-ephys_version_DEV-numDotsBugFIXED.bonsai</Name>
+      <Timestamp>2019-05-17T10:37:44.1843288+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\afc2tutorial.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-21T12:55:06.9140495+00:00</Timestamp>
-      <Name>C:\Users\edward.horrocks\Desktop\Bonsai-0802\dotMotion-ephys_version_dotDensity.bonsai</Name>
+      <Timestamp>2019-05-17T10:33:50.7377094+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\SpeedDiscrimination_workflow.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-18T17:35:51.3238104+00:00</Timestamp>
-      <Name>C:\Users\edward.horrocks\Desktop\Bonsai-0802\speedDisc-PASSIVE_REWARD.bonsai</Name>
+      <Timestamp>2019-05-17T10:30:02.6661917+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\psychophysics_framework-dev1412.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-18T16:58:23.0958973+00:00</Timestamp>
-      <Name>C:\Users\edward.horrocks\Desktop\Bonsai-0802\speedDisc-lickportVER.bonsai</Name>
+      <Timestamp>2019-05-16T14:59:18.9924784+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\keypress-statetest2.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-18T15:42:58.5870299+00:00</Timestamp>
-      <Name>C:\Users\edward.horrocks\Desktop\Bonsai-0802\speed_discrim_bandW.bonsai</Name>
+      <Timestamp>2019-05-16T14:59:11.7468405+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\keypress-statetest.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-18T15:39:14.2067376+00:00</Timestamp>
-      <Name>C:\Users\edward.horrocks\Desktop\Bonsai-0802\MC_dev-lportIntegration.bonsai</Name>
+      <Timestamp>2019-05-16T14:36:20.1015489+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\dotCorridor-closed loop.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-18T13:02:49.4242537+00:00</Timestamp>
-      <Name>C:\Users\edward.horrocks\Desktop\Bonsai-0802\MC_dev5_4quarters.bonsai</Name>
+      <Timestamp>2019-05-16T14:36:13.5565954+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\speedDisc-passiveAndActive_cleanUp5-logtest.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-18T13:02:38.2991431+00:00</Timestamp>
-      <Name>C:\Users\edward.horrocks\Desktop\Bonsai-0802\speed_discrim_bandW_cubemapVER.bonsai</Name>
+      <Timestamp>2019-05-08T10:59:05.1268517+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\VR Corridor\VR_full_contrained.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-08T14:29:17.4101894+00:00</Timestamp>
-      <Name>C:\Users\edward.horrocks\Desktop\Bonsai-0802\dotMotion-ephys_version_DEV-numDotsBug.bonsai</Name>
+      <Timestamp>2019-05-07T14:11:40.1865239+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\speedDisc-passiveAndActive_cleanUp4.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-08T14:24:29.6558384+00:00</Timestamp>
-      <Name>C:\Users\edward.horrocks\Desktop\Bonsai-0802\dotMotion-ephys_version_DEV-numDotsBugFIXED-notfixed.bonsai</Name>
+      <Timestamp>2019-05-03T16:43:49.8232947+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\Perspective.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-08T13:25:28.6418154+00:00</Timestamp>
-      <Name>C:\Users\edward.horrocks\Desktop\Bonsai-0802\dotMotion-ephys_version_DEV.bonsai</Name>
+      <Timestamp>2019-05-03T16:13:03.9190919+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\speedDisc-passiveAndActive_cleanUp3.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-08T13:25:21.2260738+00:00</Timestamp>
-      <Name>C:\Users\edward.horrocks\Desktop\Bonsai-0802\dotMotion-ephys_version_DEV2.bonsai</Name>
+      <Timestamp>2019-05-02T15:07:14.0208364+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\speedDisc-passiveAndActive_cleanUp2.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-08T13:04:22.0292014+00:00</Timestamp>
-      <Name>C:\Users\edward.horrocks\Desktop\Bonsai-0802\Plane2-FlushBeforeDraw.bonsai</Name>
+      <Timestamp>2019-05-02T12:05:22.9788512+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\speedDisc-passiveAndActive_cleanUp.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-07T18:11:38.9304009+00:00</Timestamp>
-      <Name>C:\Users\edward.horrocks\Desktop\Bonsai-0802\ContrastModulation_trialStruct.bonsai</Name>
+      <Timestamp>2019-05-02T12:04:16.8888960+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\MultiViewport.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-07T17:41:06.9563428+00:00</Timestamp>
-      <Name>C:\Users\edward.horrocks\Desktop\Bonsai-0802\MotionCoherence_degrees.bonsai</Name>
+      <Timestamp>2019-04-29T22:59:12.3156666+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\speedDisc-passiveAndActive.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-07T17:02:26.5138461+00:00</Timestamp>
-      <Name>C:\Users\edward.horrocks\Desktop\Bonsai-0802\GriddotMotion-ephys_version_DEV.bonsai</Name>
+      <Timestamp>2019-04-29T18:39:15.1224736+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\speedDisc-PASSIVE_REWARD6.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-03-06T12:38:24.9986186+00:00</Timestamp>
-      <Name>X:\ibn-vision\CODE\DEV\BONSAI\Tomaso\BONVISION\Tomaso\ContrastModulation.bonsai</Name>
+      <Timestamp>2019-04-29T18:37:41.0757006+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Documents\GitHub\Bonsai-Scripts\Bonsai-0802\speedDisc-PASSIVE_REWARD62.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2019-02-28T19:09:45.8502733+00:00</Timestamp>
-      <Name>C:\Users\edward.horrocks\Documents\old bonsai\BV backupFiles\BonVision\GammaCorrection_rgb.bonsai</Name>
+      <Timestamp>2019-04-29T18:37:15.4022413+01:00</Timestamp>
+      <Name>C:\Users\edward.horrocks\Downloads\speedDisc-PASSIVE_REWARDTEST.bonsai</Name>
     </RecentlyUsedFile>
   </RecentlyUsedFiles>
 </EditorSettings>

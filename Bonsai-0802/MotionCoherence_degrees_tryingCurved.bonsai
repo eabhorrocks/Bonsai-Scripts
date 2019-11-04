@@ -1,0 +1,2399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowBuilder Version="2.4.0-preview">
+  <Workflow xmlns:q1="clr-namespace:;assembly=Extensions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:q2="clr-namespace:Bonsai.Shaders;assembly=Bonsai.Shaders" xmlns:q3="clr-namespace:Bonsai.IO;assembly=Bonsai.System" xmlns="https://bonsai-rx.org/2018/workflow">
+    <Nodes>
+      <Expression xsi:type="ExternalizedProperty">
+        <MemberName>Coherence</MemberName>
+        <Name>Coherence</Name>
+      </Expression>
+      <Expression xsi:type="SubscribeSubject">
+        <Name>Borders</Name>
+      </Expression>
+      <Expression xsi:type="PropertyMapping">
+        <PropertyMappings>
+          <Property Name="top" Selector="Item1" />
+          <Property Name="bottom" Selector="Item2" />
+          <Property Name="left" Selector="Item3" />
+          <Property Name="right" Selector="Item4" />
+        </PropertyMappings>
+      </Expression>
+      <Expression xsi:type="ExternalizedProperty">
+        <MemberName>Diameter</MemberName>
+        <Name>Diameter</Name>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="IntProperty">
+          <Value>200</Value>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="ExternalizedProperty">
+        <MemberName>numDots</MemberName>
+        <Name>numDots</Name>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="q1:GenerateDotField">
+          <q1:numDots>200</q1:numDots>
+          <q1:left>-50</q1:left>
+          <q1:right>50</q1:right>
+          <q1:top>50</q1:top>
+          <q1:bottom>-50</q1:bottom>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="SubscribeSubject">
+          <Name>WheelDisplacement</Name>
+        </Builder>
+      </Expression>
+      <Expression xsi:type="ExternalizedMapping">
+        <Property Name="Velocity" />
+        <Property Name="dir" />
+      </Expression>
+      <Expression xsi:type="GroupWorkflow">
+        <Name>DrawMovingCircleArray-2d</Name>
+        <Description>Draws multiple colored circles using the input array as position data.</Description>
+        <Workflow>
+          <Nodes>
+            <Expression xsi:type="ExternalizedProperty">
+              <MemberName>LocationX</MemberName>
+              <Name>LocationX</Name>
+            </Expression>
+            <Expression xsi:type="ExternalizedProperty">
+              <MemberName>LocationY</MemberName>
+              <Name>LocationY</Name>
+            </Expression>
+            <Expression xsi:type="ExternalizedProperty">
+              <MemberName>Value</MemberName>
+              <Name>ColorR</Name>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="FloatProperty">
+                <Value>1</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="ExternalizedProperty">
+              <MemberName>X</MemberName>
+              <Name />
+            </Expression>
+            <Expression xsi:type="ExternalizedProperty">
+              <MemberName>Value</MemberName>
+              <Name>ColorG</Name>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="FloatProperty">
+                <Value>1</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="ExternalizedProperty">
+              <MemberName>Y</MemberName>
+              <Name />
+            </Expression>
+            <Expression xsi:type="ExternalizedProperty">
+              <MemberName>Value</MemberName>
+              <Name>ColorB</Name>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="FloatProperty">
+                <Value>1</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="ExternalizedProperty">
+              <MemberName>Z</MemberName>
+              <Name />
+            </Expression>
+            <Expression xsi:type="ExternalizedProperty">
+              <MemberName>Value</MemberName>
+              <Name>ColorA</Name>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="FloatProperty">
+                <Value>1</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="ExternalizedProperty">
+              <MemberName>W</MemberName>
+              <Name />
+            </Expression>
+            <Expression xsi:type="ExternalizedProperty">
+              <MemberName>Value</MemberName>
+              <Name>Diameter</Name>
+            </Expression>
+            <Expression xsi:type="PropertySourceOfCreateScaleSingle">
+              <MemberName>X</MemberName>
+              <Value>1</Value>
+            </Expression>
+            <Expression xsi:type="PropertyMapping">
+              <PropertyMappings>
+                <Property Name="ExtentX" />
+                <Property Name="ExtentY" />
+              </PropertyMappings>
+            </Expression>
+            <Expression xsi:type="WorkflowInput">
+              <Name>Source1</Name>
+            </Expression>
+            <Expression xsi:type="SubscribeSubject">
+              <Name>DrawStimuli</Name>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="q2:UpdateUniform">
+                <q2:UniformName>projection</q2:UniformName>
+                <q2:ShaderName>CircleArray</q2:ShaderName>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="GroupWorkflow">
+              <Name>Transform</Name>
+              <Workflow>
+                <Nodes>
+                  <Expression xsi:type="WorkflowInput">
+                    <Name>Source1</Name>
+                  </Expression>
+                  <Expression xsi:type="ExternalizedProperty">
+                    <MemberName>Angle</MemberName>
+                    <Name>Angle</Name>
+                  </Expression>
+                  <Expression xsi:type="ExternalizedProperty">
+                    <MemberName>X</MemberName>
+                    <Name>ExtentX</Name>
+                  </Expression>
+                  <Expression xsi:type="ExternalizedProperty">
+                    <MemberName>Y</MemberName>
+                    <Name>ExtentY</Name>
+                  </Expression>
+                  <Expression xsi:type="ExternalizedProperty">
+                    <MemberName>X</MemberName>
+                    <Name>LocationX</Name>
+                  </Expression>
+                  <Expression xsi:type="ExternalizedProperty">
+                    <MemberName>Y</MemberName>
+                    <Name>LocationY</Name>
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="q2:CreateTranslation">
+                      <q2:X>0</q2:X>
+                      <q2:Y>0</q2:Y>
+                      <q2:Z>0</q2:Z>
+                    </Combinator>
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="q2:Scale">
+                      <q2:Order>Prepend</q2:Order>
+                      <q2:X>1</q2:X>
+                      <q2:Y>1</q2:Y>
+                      <q2:Z>1</q2:Z>
+                    </Combinator>
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="q2:RotateZ">
+                      <q2:Order>Prepend</q2:Order>
+                      <q2:Angle>0</q2:Angle>
+                    </Combinator>
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="q2:UpdateUniform">
+                      <q2:UniformName>transform</q2:UniformName>
+                      <q2:ShaderName>CircleArray</q2:ShaderName>
+                    </Combinator>
+                  </Expression>
+                  <Expression xsi:type="WorkflowOutput" />
+                </Nodes>
+                <Edges>
+                  <Edge From="0" To="6" Label="Source1" />
+                  <Edge From="1" To="8" Label="Source2" />
+                  <Edge From="2" To="7" Label="Source2" />
+                  <Edge From="3" To="7" Label="Source3" />
+                  <Edge From="4" To="6" Label="Source2" />
+                  <Edge From="5" To="6" Label="Source3" />
+                  <Edge From="6" To="7" Label="Source1" />
+                  <Edge From="7" To="8" Label="Source1" />
+                  <Edge From="8" To="9" Label="Source1" />
+                  <Edge From="9" To="10" Label="Source1" />
+                </Edges>
+              </Workflow>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="q2:CreateVector4">
+                <q2:X>1</q2:X>
+                <q2:Y>1</q2:Y>
+                <q2:Z>1</q2:Z>
+                <q2:W>1</q2:W>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="q2:UpdateUniform">
+                <q2:UniformName>color</q2:UniformName>
+                <q2:ShaderName>CircleArray</q2:ShaderName>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="CombineLatest" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="Sample" />
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>Item1</Selector>
+            </Expression>
+            <Expression xsi:type="SubscribeSubject">
+              <Name>Borders</Name>
+            </Expression>
+            <Expression xsi:type="PropertyMapping">
+              <PropertyMappings>
+                <Property Name="top" Selector="Item1" />
+                <Property Name="bottom" Selector="Item2" />
+                <Property Name="left" Selector="Item3" />
+                <Property Name="right" Selector="Item4" />
+              </PropertyMappings>
+            </Expression>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="Velocity" />
+              <Property Name="dir" />
+              <Property Name="Coherence" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="q1:moveDots_expansion">
+                <q1:Velocity>0.0005</q1:Velocity>
+                <q1:dir>1</q1:dir>
+                <q1:Coherence>100</q1:Coherence>
+                <q1:left>-50</q1:left>
+                <q1:right>50</q1:right>
+                <q1:top>50</q1:top>
+                <q1:bottom>-50</q1:bottom>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="q2:DrawMeshInstanced">
+                <q2:ShaderName>CircleArray</q2:ShaderName>
+                <q2:MeshName>Quad</q2:MeshName>
+                <q2:Usage>DynamicDraw</q2:Usage>
+                <q2:InstanceAttributes>
+                  <q2:InstanceAttributeMapping>
+                    <q2:Size>2</q2:Size>
+                    <q2:Normalized>false</q2:Normalized>
+                    <q2:Type>Float</q2:Type>
+                    <q2:Divisor>1</q2:Divisor>
+                  </q2:InstanceAttributeMapping>
+                </q2:InstanceAttributes>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="WorkflowOutput" />
+          </Nodes>
+          <Edges>
+            <Edge From="0" To="20" Label="Source2" />
+            <Edge From="1" To="20" Label="Source3" />
+            <Edge From="2" To="3" Label="Source1" />
+            <Edge From="3" To="4" Label="Source1" />
+            <Edge From="4" To="21" Label="Source2" />
+            <Edge From="5" To="6" Label="Source1" />
+            <Edge From="6" To="7" Label="Source1" />
+            <Edge From="7" To="21" Label="Source3" />
+            <Edge From="8" To="9" Label="Source1" />
+            <Edge From="9" To="10" Label="Source1" />
+            <Edge From="10" To="21" Label="Source4" />
+            <Edge From="11" To="12" Label="Source1" />
+            <Edge From="12" To="13" Label="Source1" />
+            <Edge From="13" To="21" Label="Source5" />
+            <Edge From="14" To="15" Label="Source1" />
+            <Edge From="15" To="16" Label="Source1" />
+            <Edge From="16" To="20" Label="Source4" />
+            <Edge From="17" To="23" Label="Source1" />
+            <Edge From="18" To="19" Label="Source1" />
+            <Edge From="19" To="20" Label="Source1" />
+            <Edge From="20" To="21" Label="Source1" />
+            <Edge From="21" To="22" Label="Source1" />
+            <Edge From="22" To="23" Label="Source2" />
+            <Edge From="22" To="24" Label="Source2" />
+            <Edge From="23" To="24" Label="Source1" />
+            <Edge From="24" To="25" Label="Source1" />
+            <Edge From="25" To="29" Label="Source1" />
+            <Edge From="26" To="27" Label="Source1" />
+            <Edge From="27" To="29" Label="Source2" />
+            <Edge From="28" To="29" Label="Source3" />
+            <Edge From="29" To="30" Label="Source1" />
+            <Edge From="30" To="31" Label="Source1" />
+          </Edges>
+        </Workflow>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="q2:RenderTexture">
+          <q2:RenderState />
+          <q2:ClearColor>Black</q2:ClearColor>
+          <q2:ClearMask>DepthBufferBit ColorBufferBit</q2:ClearMask>
+          <q2:Width xsi:nil="true" />
+          <q2:Height xsi:nil="true" />
+          <q2:InternalFormat>Rgba</q2:InternalFormat>
+          <q2:WrapS>Repeat</q2:WrapS>
+          <q2:WrapT>Repeat</q2:WrapT>
+          <q2:MinFilter>Linear</q2:MinFilter>
+          <q2:MagFilter>Linear</q2:MagFilter>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="BehaviorSubject">
+        <Name>mdtext</Name>
+      </Expression>
+      <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.PerspectiveViewport.bonsai">
+        <Light>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Light>
+        <FieldOfView>125.541855</FieldOfView>
+        <Eye>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Eye>
+        <Target>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>-10000</Z>
+        </Target>
+        <Up>
+          <X>0</X>
+          <Y>1</Y>
+          <Z>0</Z>
+        </Up>
+        <NearClip>0.0001</NearClip>
+        <FarClip>100</FarClip>
+      </Expression>
+      <Expression xsi:type="Sink">
+        <Name>bindmdtext</Name>
+        <Workflow>
+          <Nodes>
+            <Expression xsi:type="WorkflowInput">
+              <Name>Source1</Name>
+            </Expression>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="Name" />
+            </Expression>
+            <Expression xsi:type="SubscribeSubject">
+              <Name>mdtext</Name>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="WithLatestFrom" />
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>Item2</Selector>
+            </Expression>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="ShaderName" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="q2:BindTexture">
+                <q2:TextureSlot>Texture0</q2:TextureSlot>
+                <q2:ShaderName>TexturedModel</q2:ShaderName>
+                <q2:TextureTarget>Texture2D</q2:TextureTarget>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="WorkflowOutput" />
+          </Nodes>
+          <Edges>
+            <Edge From="0" To="3" Label="Source1" />
+            <Edge From="1" To="2" Label="Source1" />
+            <Edge From="2" To="3" Label="Source2" />
+            <Edge From="3" To="4" Label="Source1" />
+            <Edge From="4" To="6" Label="Source1" />
+            <Edge From="5" To="6" Label="Source2" />
+            <Edge From="6" To="7" Label="Source1" />
+          </Edges>
+        </Workflow>
+      </Expression>
+      <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawTexturedModel.bonsai">
+        <TranslationX>0</TranslationX>
+        <TranslationY>0</TranslationY>
+        <TranslationZ>-0.6744186</TranslationZ>
+        <ScaleX>5</ScaleX>
+        <ScaleY>5</ScaleY>
+        <ScaleZ>1</ScaleZ>
+        <MeshName>Plane</MeshName>
+        <Ambient>
+          <X>0.5</X>
+          <Y>0.5</Y>
+          <Z>0.5</Z>
+        </Ambient>
+        <Diffuse>
+          <X>0.5</X>
+          <Y>0.5</Y>
+          <Z>0.5</Z>
+        </Diffuse>
+        <Specular>
+          <X>0.5</X>
+          <Y>0.5</Y>
+          <Z>0.5</Z>
+        </Specular>
+        <SpecularExponent>100</SpecularExponent>
+        <RotationZ>0</RotationZ>
+        <RotationY>0</RotationY>
+        <RotationX>0</RotationX>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="Combinator">
+          <Combinator xsi:type="q3:SerialStringRead">
+            <q3:NewLine>\r\n</q3:NewLine>
+          </Combinator>
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="Parse">
+          <Pattern>%i\t%i\t%i</Pattern>
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="MemberSelector">
+          <Selector>Item1</Selector>
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="BehaviorSubject">
+          <Name>WheelDisplacement</Name>
+        </Builder>
+      </Expression>
+      <Expression xsi:type="GroupWorkflow">
+        <Name>Display and Resources</Name>
+        <Workflow>
+          <Nodes>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="q2:RenderFrame" />
+            </Expression>
+            <Expression xsi:type="SubscribeSubject">
+              <Name>Borders</Name>
+            </Expression>
+            <Expression xsi:type="PropertyMapping">
+              <PropertyMappings>
+                <Property Name="Top" Selector="Item1" />
+                <Property Name="Bottom" Selector="Item2" />
+                <Property Name="Left" Selector="Item3" />
+                <Property Name="Right" Selector="Item4" />
+              </PropertyMappings>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.OrthographicViewport.bonsai">
+              <Left>-50</Left>
+              <Right>50</Right>
+              <Bottom>-50</Bottom>
+              <Top>50</Top>
+            </Expression>
+            <Expression xsi:type="PublishSubject">
+              <Name>DrawStimuli</Name>
+            </Expression>
+            <Expression xsi:type="WorkflowOutput" />
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="q2:CreateWindow">
+                <q2:Width>1280</q2:Width>
+                <q2:Height>960</q2:Height>
+                <q2:VSync>On</q2:VSync>
+                <q2:SwapSync>false</q2:SwapSync>
+                <q2:ClearColor>Gray</q2:ClearColor>
+                <q2:ClearMask>DepthBufferBit ColorBufferBit</q2:ClearMask>
+                <q2:CursorVisible>true</q2:CursorVisible>
+                <q2:Location xsi:nil="true" />
+                <q2:WindowBorder>Resizable</q2:WindowBorder>
+                <q2:WindowState>Normal</q2:WindowState>
+                <q2:DisplayDevice>Primary</q2:DisplayDevice>
+                <q2:TargetRenderFrequency>0</q2:TargetRenderFrequency>
+                <q2:RenderState />
+                <q2:GraphicsMode>
+                  <q2:ColorFormat>
+                    <q2:Red>8</q2:Red>
+                    <q2:Green>8</q2:Green>
+                    <q2:Blue>8</q2:Blue>
+                    <q2:Alpha>8</q2:Alpha>
+                  </q2:ColorFormat>
+                  <q2:Depth>16</q2:Depth>
+                  <q2:Stencil>0</q2:Stencil>
+                  <q2:Samples>0</q2:Samples>
+                  <q2:AccumulatorFormat>
+                    <q2:Red>0</q2:Red>
+                    <q2:Green>0</q2:Green>
+                    <q2:Blue>0</q2:Blue>
+                    <q2:Alpha>0</q2:Alpha>
+                  </q2:AccumulatorFormat>
+                  <q2:Buffers>2</q2:Buffers>
+                  <q2:Stereo>false</q2:Stereo>
+                </q2:GraphicsMode>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.PrimitiveResources.bonsai" />
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="q2:ShaderResources">
+                <q2:Shaders />
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="q2:MeshResources">
+                <q2:Meshes>
+                  <q2:MeshConfiguration xsi:type="q2:TexturedModel">
+                    <q2:Name>icoSphereHIgh</q2:Name>
+                    <q2:FileName>C:\Users\edward.horrocks\Documents\icoSphereHIgh.obj</q2:FileName>
+                  </q2:MeshConfiguration>
+                </q2:Meshes>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="q2:TextureResources">
+                <q2:Textures />
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="q2:LoadResources" />
+            </Expression>
+            <Expression xsi:type="ExternalizedProperty">
+              <MemberName>Value</MemberName>
+              <Name>TopBorder</Name>
+              <Category>Display</Category>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="FloatProperty">
+                <Value>50</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="ReplaySubject">
+              <Name>Top</Name>
+              <BufferSize xsi:nil="true" />
+            </Expression>
+            <Expression xsi:type="ExternalizedProperty">
+              <MemberName>Value</MemberName>
+              <Name>BottomBorder</Name>
+              <Category>Display</Category>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="FloatProperty">
+                <Value>-50</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="ReplaySubject">
+              <Name>Bottom</Name>
+              <BufferSize xsi:nil="true" />
+            </Expression>
+            <Expression xsi:type="ExternalizedProperty">
+              <MemberName>Value</MemberName>
+              <Name>LeftBorder</Name>
+              <Category>Display</Category>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="FloatProperty">
+                <Value>-50</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="ReplaySubject">
+              <Name>Left</Name>
+              <BufferSize xsi:nil="true" />
+            </Expression>
+            <Expression xsi:type="ExternalizedProperty">
+              <MemberName>Value</MemberName>
+              <Name>RightBorder</Name>
+              <Category>Display</Category>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="FloatProperty">
+                <Value>50</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="ReplaySubject">
+              <Name>Right</Name>
+              <BufferSize xsi:nil="true" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="Zip" />
+            </Expression>
+            <Expression xsi:type="ReplaySubject">
+              <Name>Borders</Name>
+              <BufferSize xsi:nil="true" />
+            </Expression>
+          </Nodes>
+          <Edges>
+            <Edge From="0" To="3" Label="Source1" />
+            <Edge From="1" To="2" Label="Source1" />
+            <Edge From="2" To="3" Label="Source2" />
+            <Edge From="3" To="4" Label="Source1" />
+            <Edge From="4" To="5" Label="Source1" />
+            <Edge From="6" To="7" Label="Source1" />
+            <Edge From="7" To="8" Label="Source1" />
+            <Edge From="8" To="9" Label="Source1" />
+            <Edge From="9" To="10" Label="Source1" />
+            <Edge From="10" To="11" Label="Source1" />
+            <Edge From="12" To="13" Label="Source1" />
+            <Edge From="13" To="14" Label="Source1" />
+            <Edge From="14" To="24" Label="Source1" />
+            <Edge From="15" To="16" Label="Source1" />
+            <Edge From="16" To="17" Label="Source1" />
+            <Edge From="17" To="24" Label="Source2" />
+            <Edge From="18" To="19" Label="Source1" />
+            <Edge From="19" To="20" Label="Source1" />
+            <Edge From="20" To="24" Label="Source3" />
+            <Edge From="21" To="22" Label="Source1" />
+            <Edge From="22" To="23" Label="Source1" />
+            <Edge From="23" To="24" Label="Source4" />
+            <Edge From="24" To="25" Label="Source1" />
+          </Edges>
+        </Workflow>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="Combinator">
+          <Combinator xsi:type="q2:RenderFrame" />
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="IncludeWorkflow" Path="BonVision:Environment.OrthographicViewport.bonsai">
+          <Left>-180</Left>
+          <Right>180</Right>
+          <Bottom>-60</Bottom>
+          <Top>60</Top>
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="GroupWorkflow">
+          <Name>MovingDots_SpeedDiscrim</Name>
+          <Workflow>
+            <Nodes>
+              <Expression xsi:type="WorkflowInput">
+                <Name>Source1</Name>
+              </Expression>
+              <Expression xsi:type="ExternalizedMapping">
+                <Property Name="ColorA" />
+                <Property Name="Diameter" />
+                <Property Name="Coherence" />
+                <Property Name="dotLifetime" />
+                <Property Name="dotLifetimeBool" />
+              </Expression>
+              <Expression xsi:type="SubscribeSubject">
+                <Name>Parameters</Name>
+              </Expression>
+              <Expression xsi:type="MemberSelector">
+                <Selector>numDots1</Selector>
+              </Expression>
+              <Expression xsi:type="Divide">
+                <Operand xsi:type="FloatProperty">
+                  <Value>2</Value>
+                </Operand>
+              </Expression>
+              <Expression xsi:type="PropertyMapping">
+                <PropertyMappings>
+                  <Property Name="numDots" />
+                </PropertyMappings>
+              </Expression>
+              <Expression xsi:type="SubscribeSubject">
+                <Name>Parameters</Name>
+              </Expression>
+              <Expression xsi:type="MemberSelector">
+                <Selector>numDots1</Selector>
+              </Expression>
+              <Expression xsi:type="Divide">
+                <Operand xsi:type="FloatProperty">
+                  <Value>2</Value>
+                </Operand>
+              </Expression>
+              <Expression xsi:type="PropertyMapping">
+                <PropertyMappings>
+                  <Property Name="numDots" />
+                </PropertyMappings>
+              </Expression>
+              <Expression xsi:type="ExternalizedMapping">
+                <Property Name="VelX" />
+                <Property Name="VelY" />
+              </Expression>
+              <Expression xsi:type="GroupWorkflow">
+                <Name>MovingBlackDots</Name>
+                <Description>Draws multiple colored circles using the input array as position data.</Description>
+                <Workflow>
+                  <Nodes>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>LocationX</MemberName>
+                      <Name>LocationX</Name>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>LocationY</MemberName>
+                      <Name>LocationY</Name>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>Z</MemberName>
+                      <Name />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>0</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>X</MemberName>
+                      <Name />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>Y</MemberName>
+                      <Name />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>Value</MemberName>
+                      <Name>ColorA</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>1</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>W</MemberName>
+                      <Name />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>Value</MemberName>
+                      <Name>Diameter</Name>
+                    </Expression>
+                    <Expression xsi:type="PropertySourceOfCreateScaleSingle">
+                      <MemberName>X</MemberName>
+                      <Value>3</Value>
+                    </Expression>
+                    <Expression xsi:type="PropertyMapping">
+                      <PropertyMappings>
+                        <Property Name="ExtentX" />
+                        <Property Name="ExtentY" />
+                      </PropertyMappings>
+                    </Expression>
+                    <Expression xsi:type="WorkflowInput">
+                      <Name>Source1</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:UpdateUniform">
+                        <q2:UniformName>projection</q2:UniformName>
+                        <q2:ShaderName>CircleArray</q2:ShaderName>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="GroupWorkflow">
+                      <Name>Transform</Name>
+                      <Workflow>
+                        <Nodes>
+                          <Expression xsi:type="WorkflowInput">
+                            <Name>Source1</Name>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedProperty">
+                            <MemberName>Angle</MemberName>
+                            <Name>Angle</Name>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedProperty">
+                            <MemberName>X</MemberName>
+                            <Name>ExtentX</Name>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedProperty">
+                            <MemberName>Y</MemberName>
+                            <Name>ExtentY</Name>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedProperty">
+                            <MemberName>X</MemberName>
+                            <Name>LocationX</Name>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedProperty">
+                            <MemberName>Y</MemberName>
+                            <Name>LocationY</Name>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="q2:CreateTranslation">
+                              <q2:X>0.5</q2:X>
+                              <q2:Y>0</q2:Y>
+                              <q2:Z>0</q2:Z>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="q2:Scale">
+                              <q2:Order>Prepend</q2:Order>
+                              <q2:X>3</q2:X>
+                              <q2:Y>3</q2:Y>
+                              <q2:Z>1</q2:Z>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="q2:RotateZ">
+                              <q2:Order>Prepend</q2:Order>
+                              <q2:Angle>0</q2:Angle>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="q2:UpdateUniform">
+                              <q2:UniformName>transform</q2:UniformName>
+                              <q2:ShaderName>CircleArray</q2:ShaderName>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="WorkflowOutput" />
+                        </Nodes>
+                        <Edges>
+                          <Edge From="0" To="6" Label="Source1" />
+                          <Edge From="1" To="8" Label="Source2" />
+                          <Edge From="2" To="7" Label="Source2" />
+                          <Edge From="3" To="7" Label="Source3" />
+                          <Edge From="4" To="6" Label="Source2" />
+                          <Edge From="5" To="6" Label="Source3" />
+                          <Edge From="6" To="7" Label="Source1" />
+                          <Edge From="7" To="8" Label="Source1" />
+                          <Edge From="8" To="9" Label="Source1" />
+                          <Edge From="9" To="10" Label="Source1" />
+                        </Edges>
+                      </Workflow>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:CreateVector4">
+                        <q2:X>0</q2:X>
+                        <q2:Y>0</q2:Y>
+                        <q2:Z>0</q2:Z>
+                        <q2:W>1</q2:W>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:UpdateUniform">
+                        <q2:UniformName>color</q2:UniformName>
+                        <q2:ShaderName>CircleArray</q2:ShaderName>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>Coherence</MemberName>
+                      <Name>Coherence</Name>
+                    </Expression>
+                    <Expression xsi:type="SubscribeSubject">
+                      <Name>Borders</Name>
+                    </Expression>
+                    <Expression xsi:type="PropertyMapping">
+                      <PropertyMappings>
+                        <Property Name="top" Selector="Item1" />
+                        <Property Name="bottom" Selector="Item2" />
+                        <Property Name="left" Selector="Item3" />
+                        <Property Name="right" Selector="Item4" />
+                      </PropertyMappings>
+                    </Expression>
+                    <Expression xsi:type="SubscribeSubject">
+                      <Name>Borders</Name>
+                    </Expression>
+                    <Expression xsi:type="PropertyMapping">
+                      <PropertyMappings>
+                        <Property Name="top" Selector="Item1" />
+                        <Property Name="bottom" Selector="Item2" />
+                        <Property Name="left" Selector="Item3" />
+                        <Property Name="right" Selector="Item4" />
+                      </PropertyMappings>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="dotLifetime" />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="numDots" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q1:GenerateDotField">
+                        <q1:numDots>75</q1:numDots>
+                        <q1:left>-180</q1:left>
+                        <q1:right>180</q1:right>
+                        <q1:top>60</q1:top>
+                        <q1:bottom>-60</q1:bottom>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q1:GenerateDotLives">
+                        <q1:dotLifetime>20</q1:dotLifetime>
+                        <q1:numDots>75</q1:numDots>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="Zip" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="CombineLatest" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="Sample" />
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item1</Selector>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="dotLifetimeBool" />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="Value" DisplayName="VelX" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>-10</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:Delay">
+                        <q2:DueTime>PT1S</q2:DueTime>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="Value" DisplayName="VelY" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>0</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:Delay">
+                        <q2:DueTime>PT1S</q2:DueTime>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>0</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="Merge" />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>VelocityX</MemberName>
+                      <Name>VelocityX</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="StringProperty">
+                        <Value>dotsMOVE</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="Take">
+                        <Count>1</Count>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="IncludeWorkflow" Path="BonVision:Logging.LogEvent.bonsai">
+                      <Format xsi:nil="true" />
+                      <Selector xsi:nil="true" />
+                      <Name>Events</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="StringProperty">
+                        <Value>stimON</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="IncludeWorkflow" Path="BonVision:Logging.LogEvent.bonsai">
+                      <Format xsi:nil="true" />
+                      <Selector xsi:nil="true" />
+                      <Name>Events</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="Merge" />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>VelocityY</MemberName>
+                      <Name>VelocityY</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q1:moveDots_2dLife">
+                        <q1:VelocityX>0</q1:VelocityX>
+                        <q1:VelocityY>0</q1:VelocityY>
+                        <q1:Coherence>100</q1:Coherence>
+                        <q1:dotLifetimeBool>0</q1:dotLifetimeBool>
+                        <q1:dotLifetime>20</q1:dotLifetime>
+                        <q1:left>-180</q1:left>
+                        <q1:right>180</q1:right>
+                        <q1:top>60</q1:top>
+                        <q1:bottom>-60</q1:bottom>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item1</Selector>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q1:wrapAroundDots">
+                        <q1:Left>-180</q1:Left>
+                        <q1:Right>180</q1:Right>
+                        <q1:Top>60</q1:Top>
+                        <q1:Bottom>-60</q1:Bottom>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:DrawMeshInstanced">
+                        <q2:ShaderName>CircleArray</q2:ShaderName>
+                        <q2:MeshName>Quad</q2:MeshName>
+                        <q2:Usage>DynamicDraw</q2:Usage>
+                        <q2:InstanceAttributes>
+                          <q2:InstanceAttributeMapping>
+                            <q2:Size>2</q2:Size>
+                            <q2:Normalized>false</q2:Normalized>
+                            <q2:Type>Float</q2:Type>
+                            <q2:Divisor>1</q2:Divisor>
+                          </q2:InstanceAttributeMapping>
+                        </q2:InstanceAttributes>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="WorkflowOutput" />
+                  </Nodes>
+                  <Edges>
+                    <Edge From="0" To="14" Label="Source2" />
+                    <Edge From="1" To="14" Label="Source3" />
+                    <Edge From="2" To="15" Label="Source4" />
+                    <Edge From="3" To="4" Label="Source1" />
+                    <Edge From="3" To="5" Label="Source1" />
+                    <Edge From="4" To="15" Label="Source2" />
+                    <Edge From="5" To="15" Label="Source3" />
+                    <Edge From="6" To="7" Label="Source1" />
+                    <Edge From="7" To="8" Label="Source1" />
+                    <Edge From="8" To="15" Label="Source5" />
+                    <Edge From="9" To="10" Label="Source1" />
+                    <Edge From="10" To="11" Label="Source1" />
+                    <Edge From="11" To="14" Label="Source4" />
+                    <Edge From="12" To="13" Label="Source1" />
+                    <Edge From="13" To="14" Label="Source1" />
+                    <Edge From="14" To="15" Label="Source1" />
+                    <Edge From="15" To="16" Label="Source1" />
+                    <Edge From="16" To="28" Label="Source2" />
+                    <Edge From="16" To="27" Label="Source2" />
+                    <Edge From="17" To="47" Label="Source4" />
+                    <Edge From="18" To="19" Label="Source1" />
+                    <Edge From="19" To="47" Label="Source5" />
+                    <Edge From="19" To="49" Label="Source2" />
+                    <Edge From="20" To="21" Label="Source1" />
+                    <Edge From="21" To="24" Label="Source1" />
+                    <Edge From="22" To="25" Label="Source1" />
+                    <Edge From="22" To="47" Label="Source6" />
+                    <Edge From="23" To="24" Label="Source2" />
+                    <Edge From="23" To="25" Label="Source2" />
+                    <Edge From="24" To="26" Label="Source1" />
+                    <Edge From="25" To="26" Label="Source2" />
+                    <Edge From="26" To="27" Label="Source1" />
+                    <Edge From="27" To="28" Label="Source1" />
+                    <Edge From="28" To="29" Label="Source1" />
+                    <Edge From="29" To="47" Label="Source1" />
+                    <Edge From="30" To="47" Label="Source7" />
+                    <Edge From="31" To="32" Label="Source1" />
+                    <Edge From="32" To="33" Label="Source1" />
+                    <Edge From="32" To="43" Label="Source1" />
+                    <Edge From="33" To="38" Label="Source1" />
+                    <Edge From="33" To="40" Label="Source1" />
+                    <Edge From="34" To="35" Label="Source1" />
+                    <Edge From="35" To="36" Label="Source1" />
+                    <Edge From="36" To="45" Label="Source1" />
+                    <Edge From="37" To="38" Label="Source2" />
+                    <Edge From="37" To="45" Label="Source2" />
+                    <Edge From="38" To="39" Label="Source1" />
+                    <Edge From="39" To="47" Label="Source2" />
+                    <Edge From="40" To="41" Label="Source1" />
+                    <Edge From="41" To="42" Label="Source1" />
+                    <Edge From="43" To="44" Label="Source1" />
+                    <Edge From="45" To="46" Label="Source1" />
+                    <Edge From="46" To="47" Label="Source3" />
+                    <Edge From="47" To="48" Label="Source1" />
+                    <Edge From="48" To="49" Label="Source1" />
+                    <Edge From="49" To="50" Label="Source1" />
+                    <Edge From="50" To="51" Label="Source1" />
+                  </Edges>
+                </Workflow>
+              </Expression>
+              <Expression xsi:type="GroupWorkflow">
+                <Name>MovingWhiteDots</Name>
+                <Description>Draws multiple colored circles using the input array as position data.</Description>
+                <Workflow>
+                  <Nodes>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>LocationX</MemberName>
+                      <Name>LocationX</Name>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>LocationY</MemberName>
+                      <Name>LocationY</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>1</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>X</MemberName>
+                      <Name />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>Y</MemberName>
+                      <Name />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>Z</MemberName>
+                      <Name />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>Value</MemberName>
+                      <Name>ColorA</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>1</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>W</MemberName>
+                      <Name />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>Value</MemberName>
+                      <Name>Diameter</Name>
+                    </Expression>
+                    <Expression xsi:type="PropertySourceOfCreateScaleSingle">
+                      <MemberName>X</MemberName>
+                      <Value>3</Value>
+                    </Expression>
+                    <Expression xsi:type="PropertyMapping">
+                      <PropertyMappings>
+                        <Property Name="ExtentX" />
+                        <Property Name="ExtentY" />
+                      </PropertyMappings>
+                    </Expression>
+                    <Expression xsi:type="WorkflowInput">
+                      <Name>Source1</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:UpdateUniform">
+                        <q2:UniformName>projection</q2:UniformName>
+                        <q2:ShaderName>CircleArray</q2:ShaderName>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="GroupWorkflow">
+                      <Name>Transform</Name>
+                      <Workflow>
+                        <Nodes>
+                          <Expression xsi:type="WorkflowInput">
+                            <Name>Source1</Name>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedProperty">
+                            <MemberName>Angle</MemberName>
+                            <Name>Angle</Name>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedProperty">
+                            <MemberName>X</MemberName>
+                            <Name>ExtentX</Name>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedProperty">
+                            <MemberName>Y</MemberName>
+                            <Name>ExtentY</Name>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedProperty">
+                            <MemberName>X</MemberName>
+                            <Name>LocationX</Name>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedProperty">
+                            <MemberName>Y</MemberName>
+                            <Name>LocationY</Name>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="q2:CreateTranslation">
+                              <q2:X>0.5</q2:X>
+                              <q2:Y>0</q2:Y>
+                              <q2:Z>0</q2:Z>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="q2:Scale">
+                              <q2:Order>Prepend</q2:Order>
+                              <q2:X>3</q2:X>
+                              <q2:Y>3</q2:Y>
+                              <q2:Z>1</q2:Z>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="q2:RotateZ">
+                              <q2:Order>Prepend</q2:Order>
+                              <q2:Angle>0</q2:Angle>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="q2:UpdateUniform">
+                              <q2:UniformName>transform</q2:UniformName>
+                              <q2:ShaderName>CircleArray</q2:ShaderName>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="WorkflowOutput" />
+                        </Nodes>
+                        <Edges>
+                          <Edge From="0" To="6" Label="Source1" />
+                          <Edge From="1" To="8" Label="Source2" />
+                          <Edge From="2" To="7" Label="Source2" />
+                          <Edge From="3" To="7" Label="Source3" />
+                          <Edge From="4" To="6" Label="Source2" />
+                          <Edge From="5" To="6" Label="Source3" />
+                          <Edge From="6" To="7" Label="Source1" />
+                          <Edge From="7" To="8" Label="Source1" />
+                          <Edge From="8" To="9" Label="Source1" />
+                          <Edge From="9" To="10" Label="Source1" />
+                        </Edges>
+                      </Workflow>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:CreateVector4">
+                        <q2:X>1</q2:X>
+                        <q2:Y>1</q2:Y>
+                        <q2:Z>1</q2:Z>
+                        <q2:W>1</q2:W>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:UpdateUniform">
+                        <q2:UniformName>color</q2:UniformName>
+                        <q2:ShaderName>CircleArray</q2:ShaderName>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>Coherence</MemberName>
+                      <Name>Coherence</Name>
+                    </Expression>
+                    <Expression xsi:type="SubscribeSubject">
+                      <Name>Borders</Name>
+                    </Expression>
+                    <Expression xsi:type="PropertyMapping">
+                      <PropertyMappings>
+                        <Property Name="top" Selector="Item1" />
+                        <Property Name="bottom" Selector="Item2" />
+                        <Property Name="left" Selector="Item3" />
+                        <Property Name="right" Selector="Item4" />
+                      </PropertyMappings>
+                    </Expression>
+                    <Expression xsi:type="SubscribeSubject">
+                      <Name>Borders</Name>
+                    </Expression>
+                    <Expression xsi:type="PropertyMapping">
+                      <PropertyMappings>
+                        <Property Name="top" Selector="Item1" />
+                        <Property Name="bottom" Selector="Item2" />
+                        <Property Name="left" Selector="Item3" />
+                        <Property Name="right" Selector="Item4" />
+                      </PropertyMappings>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="dotLifetime" />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="dotLifetimeBool" />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="numDots" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q1:GenerateDotField2">
+                        <q1:numDots>75</q1:numDots>
+                        <q1:left>-180</q1:left>
+                        <q1:right>180</q1:right>
+                        <q1:top>60</q1:top>
+                        <q1:bottom>-60</q1:bottom>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q1:GenerateDotLives">
+                        <q1:dotLifetime>20</q1:dotLifetime>
+                        <q1:numDots>75</q1:numDots>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="Zip" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="CombineLatest" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="Sample" />
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item1</Selector>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="Value" DisplayName="VelX" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>-10</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:Delay">
+                        <q2:DueTime>PT1S</q2:DueTime>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="Value" DisplayName="VelY" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>0</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:Delay">
+                        <q2:DueTime>PT1S</q2:DueTime>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>0</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="Merge" />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>VelocityY</MemberName>
+                      <Name>VelocityY</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="Merge" />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>VelocityX</MemberName>
+                      <Name>VelocityX</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q1:moveDots_2dLife">
+                        <q1:VelocityX>0</q1:VelocityX>
+                        <q1:VelocityY>0</q1:VelocityY>
+                        <q1:Coherence>100</q1:Coherence>
+                        <q1:dotLifetimeBool>0</q1:dotLifetimeBool>
+                        <q1:dotLifetime>20</q1:dotLifetime>
+                        <q1:left>-180</q1:left>
+                        <q1:right>180</q1:right>
+                        <q1:top>60</q1:top>
+                        <q1:bottom>-60</q1:bottom>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item1</Selector>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q1:wrapAroundDots">
+                        <q1:Left>-180</q1:Left>
+                        <q1:Right>180</q1:Right>
+                        <q1:Top>60</q1:Top>
+                        <q1:Bottom>-60</q1:Bottom>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:DrawMeshInstanced">
+                        <q2:ShaderName>CircleArray</q2:ShaderName>
+                        <q2:MeshName>Quad</q2:MeshName>
+                        <q2:Usage>DynamicDraw</q2:Usage>
+                        <q2:InstanceAttributes>
+                          <q2:InstanceAttributeMapping>
+                            <q2:Size>2</q2:Size>
+                            <q2:Normalized>false</q2:Normalized>
+                            <q2:Type>Float</q2:Type>
+                            <q2:Divisor>1</q2:Divisor>
+                          </q2:InstanceAttributeMapping>
+                        </q2:InstanceAttributes>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="WorkflowOutput" />
+                  </Nodes>
+                  <Edges>
+                    <Edge From="0" To="14" Label="Source2" />
+                    <Edge From="1" To="14" Label="Source3" />
+                    <Edge From="2" To="3" Label="Source1" />
+                    <Edge From="2" To="4" Label="Source1" />
+                    <Edge From="2" To="5" Label="Source1" />
+                    <Edge From="3" To="15" Label="Source2" />
+                    <Edge From="4" To="15" Label="Source3" />
+                    <Edge From="5" To="15" Label="Source4" />
+                    <Edge From="6" To="7" Label="Source1" />
+                    <Edge From="7" To="8" Label="Source1" />
+                    <Edge From="8" To="15" Label="Source5" />
+                    <Edge From="9" To="10" Label="Source1" />
+                    <Edge From="10" To="11" Label="Source1" />
+                    <Edge From="11" To="14" Label="Source4" />
+                    <Edge From="12" To="13" Label="Source1" />
+                    <Edge From="13" To="14" Label="Source1" />
+                    <Edge From="14" To="15" Label="Source1" />
+                    <Edge From="15" To="16" Label="Source1" />
+                    <Edge From="16" To="29" Label="Source2" />
+                    <Edge From="16" To="28" Label="Source2" />
+                    <Edge From="17" To="42" Label="Source4" />
+                    <Edge From="18" To="19" Label="Source1" />
+                    <Edge From="19" To="42" Label="Source5" />
+                    <Edge From="19" To="44" Label="Source2" />
+                    <Edge From="20" To="21" Label="Source1" />
+                    <Edge From="21" To="25" Label="Source1" />
+                    <Edge From="22" To="26" Label="Source1" />
+                    <Edge From="22" To="42" Label="Source6" />
+                    <Edge From="23" To="42" Label="Source7" />
+                    <Edge From="24" To="25" Label="Source2" />
+                    <Edge From="24" To="26" Label="Source2" />
+                    <Edge From="25" To="27" Label="Source1" />
+                    <Edge From="26" To="27" Label="Source2" />
+                    <Edge From="27" To="28" Label="Source1" />
+                    <Edge From="28" To="29" Label="Source1" />
+                    <Edge From="29" To="30" Label="Source1" />
+                    <Edge From="30" To="42" Label="Source1" />
+                    <Edge From="31" To="32" Label="Source1" />
+                    <Edge From="32" To="33" Label="Source1" />
+                    <Edge From="33" To="40" Label="Source1" />
+                    <Edge From="34" To="35" Label="Source1" />
+                    <Edge From="35" To="36" Label="Source1" />
+                    <Edge From="36" To="38" Label="Source1" />
+                    <Edge From="37" To="38" Label="Source2" />
+                    <Edge From="37" To="40" Label="Source2" />
+                    <Edge From="38" To="39" Label="Source1" />
+                    <Edge From="39" To="42" Label="Source3" />
+                    <Edge From="40" To="41" Label="Source1" />
+                    <Edge From="41" To="42" Label="Source2" />
+                    <Edge From="42" To="43" Label="Source1" />
+                    <Edge From="43" To="44" Label="Source1" />
+                    <Edge From="44" To="45" Label="Source1" />
+                    <Edge From="45" To="46" Label="Source1" />
+                  </Edges>
+                </Workflow>
+              </Expression>
+              <Expression xsi:type="GroupWorkflow">
+                <Name>MovingWhiteDots</Name>
+                <Description>Draws multiple colored circles using the input array as position data.</Description>
+                <Workflow>
+                  <Nodes>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>LocationX</MemberName>
+                      <Name>LocationX</Name>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>LocationY</MemberName>
+                      <Name>LocationY</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>1</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>X</MemberName>
+                      <Name />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>Y</MemberName>
+                      <Name />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>Z</MemberName>
+                      <Name />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>Value</MemberName>
+                      <Name>ColorA</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>1</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>W</MemberName>
+                      <Name />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>Value</MemberName>
+                      <Name>Diameter</Name>
+                    </Expression>
+                    <Expression xsi:type="PropertySourceOfCreateScaleSingle">
+                      <MemberName>X</MemberName>
+                      <Value>3</Value>
+                    </Expression>
+                    <Expression xsi:type="PropertyMapping">
+                      <PropertyMappings>
+                        <Property Name="ExtentX" />
+                        <Property Name="ExtentY" />
+                      </PropertyMappings>
+                    </Expression>
+                    <Expression xsi:type="WorkflowInput">
+                      <Name>Source1</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:UpdateUniform">
+                        <q2:UniformName>projection</q2:UniformName>
+                        <q2:ShaderName>CircleArray</q2:ShaderName>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="GroupWorkflow">
+                      <Name>Transform</Name>
+                      <Workflow>
+                        <Nodes>
+                          <Expression xsi:type="WorkflowInput">
+                            <Name>Source1</Name>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedProperty">
+                            <MemberName>Angle</MemberName>
+                            <Name>Angle</Name>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedProperty">
+                            <MemberName>X</MemberName>
+                            <Name>ExtentX</Name>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedProperty">
+                            <MemberName>Y</MemberName>
+                            <Name>ExtentY</Name>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedProperty">
+                            <MemberName>X</MemberName>
+                            <Name>LocationX</Name>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedProperty">
+                            <MemberName>Y</MemberName>
+                            <Name>LocationY</Name>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="q2:CreateTranslation">
+                              <q2:X>0.5</q2:X>
+                              <q2:Y>0</q2:Y>
+                              <q2:Z>0</q2:Z>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="q2:Scale">
+                              <q2:Order>Prepend</q2:Order>
+                              <q2:X>3</q2:X>
+                              <q2:Y>3</q2:Y>
+                              <q2:Z>1</q2:Z>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="q2:RotateZ">
+                              <q2:Order>Prepend</q2:Order>
+                              <q2:Angle>0</q2:Angle>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="q2:UpdateUniform">
+                              <q2:UniformName>transform</q2:UniformName>
+                              <q2:ShaderName>CircleArray</q2:ShaderName>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="WorkflowOutput" />
+                        </Nodes>
+                        <Edges>
+                          <Edge From="0" To="6" Label="Source1" />
+                          <Edge From="1" To="8" Label="Source2" />
+                          <Edge From="2" To="7" Label="Source2" />
+                          <Edge From="3" To="7" Label="Source3" />
+                          <Edge From="4" To="6" Label="Source2" />
+                          <Edge From="5" To="6" Label="Source3" />
+                          <Edge From="6" To="7" Label="Source1" />
+                          <Edge From="7" To="8" Label="Source1" />
+                          <Edge From="8" To="9" Label="Source1" />
+                          <Edge From="9" To="10" Label="Source1" />
+                        </Edges>
+                      </Workflow>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:CreateVector4">
+                        <q2:X>1</q2:X>
+                        <q2:Y>1</q2:Y>
+                        <q2:Z>1</q2:Z>
+                        <q2:W>1</q2:W>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:UpdateUniform">
+                        <q2:UniformName>color</q2:UniformName>
+                        <q2:ShaderName>CircleArray</q2:ShaderName>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>Coherence</MemberName>
+                      <Name>Coherence</Name>
+                    </Expression>
+                    <Expression xsi:type="SubscribeSubject">
+                      <Name>Borders</Name>
+                    </Expression>
+                    <Expression xsi:type="PropertyMapping">
+                      <PropertyMappings>
+                        <Property Name="top" Selector="Item1" />
+                        <Property Name="bottom" Selector="Item2" />
+                        <Property Name="left" Selector="Item3" />
+                        <Property Name="right" Selector="Item4" />
+                      </PropertyMappings>
+                    </Expression>
+                    <Expression xsi:type="SubscribeSubject">
+                      <Name>Borders</Name>
+                    </Expression>
+                    <Expression xsi:type="PropertyMapping">
+                      <PropertyMappings>
+                        <Property Name="top" Selector="Item1" />
+                        <Property Name="bottom" Selector="Item2" />
+                        <Property Name="left" Selector="Item3" />
+                        <Property Name="right" Selector="Item4" />
+                      </PropertyMappings>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="dotLifetime" />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="dotLifetimeBool" />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="numDots" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q1:GenerateDotField3">
+                        <q1:numDots>75</q1:numDots>
+                        <q1:left>-180</q1:left>
+                        <q1:right>180</q1:right>
+                        <q1:top>60</q1:top>
+                        <q1:bottom>-60</q1:bottom>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q1:GenerateDotLives">
+                        <q1:dotLifetime>20</q1:dotLifetime>
+                        <q1:numDots>75</q1:numDots>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="Zip" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="CombineLatest" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="Sample" />
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item1</Selector>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="Value" DisplayName="VelX" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>-10</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:Delay">
+                        <q2:DueTime>PT1S</q2:DueTime>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="Value" DisplayName="VelY" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>0</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:Delay">
+                        <q2:DueTime>PT1S</q2:DueTime>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>0</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="Merge" />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>VelocityX</MemberName>
+                      <Name>VelocityX</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="Merge" />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>VelocityY</MemberName>
+                      <Name>VelocityY</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q1:moveDots_2dLife">
+                        <q1:VelocityX>0</q1:VelocityX>
+                        <q1:VelocityY>0</q1:VelocityY>
+                        <q1:Coherence>100</q1:Coherence>
+                        <q1:dotLifetimeBool>0</q1:dotLifetimeBool>
+                        <q1:dotLifetime>20</q1:dotLifetime>
+                        <q1:left>-180</q1:left>
+                        <q1:right>180</q1:right>
+                        <q1:top>60</q1:top>
+                        <q1:bottom>-60</q1:bottom>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item1</Selector>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q1:wrapAroundDots">
+                        <q1:Left>-180</q1:Left>
+                        <q1:Right>180</q1:Right>
+                        <q1:Top>60</q1:Top>
+                        <q1:Bottom>-60</q1:Bottom>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:DrawMeshInstanced">
+                        <q2:ShaderName>CircleArray</q2:ShaderName>
+                        <q2:MeshName>Quad</q2:MeshName>
+                        <q2:Usage>DynamicDraw</q2:Usage>
+                        <q2:InstanceAttributes>
+                          <q2:InstanceAttributeMapping>
+                            <q2:Size>2</q2:Size>
+                            <q2:Normalized>false</q2:Normalized>
+                            <q2:Type>Float</q2:Type>
+                            <q2:Divisor>1</q2:Divisor>
+                          </q2:InstanceAttributeMapping>
+                        </q2:InstanceAttributes>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="WorkflowOutput" />
+                  </Nodes>
+                  <Edges>
+                    <Edge From="0" To="14" Label="Source2" />
+                    <Edge From="1" To="14" Label="Source3" />
+                    <Edge From="2" To="3" Label="Source1" />
+                    <Edge From="2" To="4" Label="Source1" />
+                    <Edge From="2" To="5" Label="Source1" />
+                    <Edge From="3" To="15" Label="Source2" />
+                    <Edge From="4" To="15" Label="Source3" />
+                    <Edge From="5" To="15" Label="Source4" />
+                    <Edge From="6" To="7" Label="Source1" />
+                    <Edge From="7" To="8" Label="Source1" />
+                    <Edge From="8" To="15" Label="Source5" />
+                    <Edge From="9" To="10" Label="Source1" />
+                    <Edge From="10" To="11" Label="Source1" />
+                    <Edge From="11" To="14" Label="Source4" />
+                    <Edge From="12" To="13" Label="Source1" />
+                    <Edge From="13" To="14" Label="Source1" />
+                    <Edge From="14" To="15" Label="Source1" />
+                    <Edge From="15" To="16" Label="Source1" />
+                    <Edge From="16" To="29" Label="Source2" />
+                    <Edge From="16" To="28" Label="Source2" />
+                    <Edge From="17" To="42" Label="Source4" />
+                    <Edge From="18" To="19" Label="Source1" />
+                    <Edge From="19" To="42" Label="Source5" />
+                    <Edge From="19" To="44" Label="Source2" />
+                    <Edge From="20" To="21" Label="Source1" />
+                    <Edge From="21" To="25" Label="Source1" />
+                    <Edge From="22" To="26" Label="Source1" />
+                    <Edge From="22" To="42" Label="Source6" />
+                    <Edge From="23" To="42" Label="Source7" />
+                    <Edge From="24" To="25" Label="Source2" />
+                    <Edge From="24" To="26" Label="Source2" />
+                    <Edge From="25" To="27" Label="Source1" />
+                    <Edge From="26" To="27" Label="Source2" />
+                    <Edge From="27" To="28" Label="Source1" />
+                    <Edge From="28" To="29" Label="Source1" />
+                    <Edge From="29" To="30" Label="Source1" />
+                    <Edge From="30" To="42" Label="Source1" />
+                    <Edge From="31" To="32" Label="Source1" />
+                    <Edge From="32" To="33" Label="Source1" />
+                    <Edge From="33" To="38" Label="Source1" />
+                    <Edge From="34" To="35" Label="Source1" />
+                    <Edge From="35" To="36" Label="Source1" />
+                    <Edge From="36" To="40" Label="Source1" />
+                    <Edge From="37" To="38" Label="Source2" />
+                    <Edge From="37" To="40" Label="Source2" />
+                    <Edge From="38" To="39" Label="Source1" />
+                    <Edge From="39" To="42" Label="Source2" />
+                    <Edge From="40" To="41" Label="Source1" />
+                    <Edge From="41" To="42" Label="Source3" />
+                    <Edge From="42" To="43" Label="Source1" />
+                    <Edge From="43" To="44" Label="Source1" />
+                    <Edge From="44" To="45" Label="Source1" />
+                    <Edge From="45" To="46" Label="Source1" />
+                  </Edges>
+                </Workflow>
+              </Expression>
+              <Expression xsi:type="GroupWorkflow">
+                <Name>MovingBlackDots</Name>
+                <Description>Draws multiple colored circles using the input array as position data.</Description>
+                <Workflow>
+                  <Nodes>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>LocationX</MemberName>
+                      <Name>LocationX</Name>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>LocationY</MemberName>
+                      <Name>LocationY</Name>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>Z</MemberName>
+                      <Name />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>0</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>X</MemberName>
+                      <Name />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>Y</MemberName>
+                      <Name />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>Value</MemberName>
+                      <Name>ColorA</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>1</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>W</MemberName>
+                      <Name />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>Value</MemberName>
+                      <Name>Diameter</Name>
+                    </Expression>
+                    <Expression xsi:type="PropertySourceOfCreateScaleSingle">
+                      <MemberName>X</MemberName>
+                      <Value>3</Value>
+                    </Expression>
+                    <Expression xsi:type="PropertyMapping">
+                      <PropertyMappings>
+                        <Property Name="ExtentX" />
+                        <Property Name="ExtentY" />
+                      </PropertyMappings>
+                    </Expression>
+                    <Expression xsi:type="WorkflowInput">
+                      <Name>Source1</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:UpdateUniform">
+                        <q2:UniformName>projection</q2:UniformName>
+                        <q2:ShaderName>CircleArray</q2:ShaderName>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="GroupWorkflow">
+                      <Name>Transform</Name>
+                      <Workflow>
+                        <Nodes>
+                          <Expression xsi:type="WorkflowInput">
+                            <Name>Source1</Name>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedProperty">
+                            <MemberName>Angle</MemberName>
+                            <Name>Angle</Name>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedProperty">
+                            <MemberName>X</MemberName>
+                            <Name>ExtentX</Name>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedProperty">
+                            <MemberName>Y</MemberName>
+                            <Name>ExtentY</Name>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedProperty">
+                            <MemberName>X</MemberName>
+                            <Name>LocationX</Name>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedProperty">
+                            <MemberName>Y</MemberName>
+                            <Name>LocationY</Name>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="q2:CreateTranslation">
+                              <q2:X>0.5</q2:X>
+                              <q2:Y>0</q2:Y>
+                              <q2:Z>0</q2:Z>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="q2:Scale">
+                              <q2:Order>Prepend</q2:Order>
+                              <q2:X>3</q2:X>
+                              <q2:Y>3</q2:Y>
+                              <q2:Z>1</q2:Z>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="q2:RotateZ">
+                              <q2:Order>Prepend</q2:Order>
+                              <q2:Angle>0</q2:Angle>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="q2:UpdateUniform">
+                              <q2:UniformName>transform</q2:UniformName>
+                              <q2:ShaderName>CircleArray</q2:ShaderName>
+                            </Combinator>
+                          </Expression>
+                          <Expression xsi:type="WorkflowOutput" />
+                        </Nodes>
+                        <Edges>
+                          <Edge From="0" To="6" Label="Source1" />
+                          <Edge From="1" To="8" Label="Source2" />
+                          <Edge From="2" To="7" Label="Source2" />
+                          <Edge From="3" To="7" Label="Source3" />
+                          <Edge From="4" To="6" Label="Source2" />
+                          <Edge From="5" To="6" Label="Source3" />
+                          <Edge From="6" To="7" Label="Source1" />
+                          <Edge From="7" To="8" Label="Source1" />
+                          <Edge From="8" To="9" Label="Source1" />
+                          <Edge From="9" To="10" Label="Source1" />
+                        </Edges>
+                      </Workflow>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:CreateVector4">
+                        <q2:X>0</q2:X>
+                        <q2:Y>0</q2:Y>
+                        <q2:Z>0</q2:Z>
+                        <q2:W>1</q2:W>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:UpdateUniform">
+                        <q2:UniformName>color</q2:UniformName>
+                        <q2:ShaderName>CircleArray</q2:ShaderName>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>Coherence</MemberName>
+                      <Name>Coherence</Name>
+                    </Expression>
+                    <Expression xsi:type="SubscribeSubject">
+                      <Name>Borders</Name>
+                    </Expression>
+                    <Expression xsi:type="PropertyMapping">
+                      <PropertyMappings>
+                        <Property Name="top" Selector="Item1" />
+                        <Property Name="bottom" Selector="Item2" />
+                        <Property Name="left" Selector="Item3" />
+                        <Property Name="right" Selector="Item4" />
+                      </PropertyMappings>
+                    </Expression>
+                    <Expression xsi:type="SubscribeSubject">
+                      <Name>Borders</Name>
+                    </Expression>
+                    <Expression xsi:type="PropertyMapping">
+                      <PropertyMappings>
+                        <Property Name="top" Selector="Item1" />
+                        <Property Name="bottom" Selector="Item2" />
+                        <Property Name="left" Selector="Item3" />
+                        <Property Name="right" Selector="Item4" />
+                      </PropertyMappings>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="dotLifetime" />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="dotLifetimeBool" />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="numDots" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q1:GenerateDotField4">
+                        <q1:numDots>75</q1:numDots>
+                        <q1:left>-180</q1:left>
+                        <q1:right>180</q1:right>
+                        <q1:top>60</q1:top>
+                        <q1:bottom>-60</q1:bottom>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q1:GenerateDotLives">
+                        <q1:dotLifetime>20</q1:dotLifetime>
+                        <q1:numDots>75</q1:numDots>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="Zip" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="CombineLatest" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="Sample" />
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item1</Selector>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="Value" DisplayName="VelX" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>-10</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:Delay">
+                        <q2:DueTime>PT1S</q2:DueTime>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="Value" DisplayName="VelY" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>0</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:Delay">
+                        <q2:DueTime>PT1S</q2:DueTime>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="FloatProperty">
+                        <Value>0</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="Merge" />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>VelocityX</MemberName>
+                      <Name>VelocityX</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="Merge" />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedProperty">
+                      <MemberName>VelocityY</MemberName>
+                      <Name>VelocityY</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q1:moveDots_2dLife">
+                        <q1:VelocityX>0</q1:VelocityX>
+                        <q1:VelocityY>0</q1:VelocityY>
+                        <q1:Coherence>100</q1:Coherence>
+                        <q1:dotLifetimeBool>0</q1:dotLifetimeBool>
+                        <q1:dotLifetime>20</q1:dotLifetime>
+                        <q1:left>-180</q1:left>
+                        <q1:right>180</q1:right>
+                        <q1:top>60</q1:top>
+                        <q1:bottom>-60</q1:bottom>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Item1</Selector>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q1:wrapAroundDots">
+                        <q1:Left>-180</q1:Left>
+                        <q1:Right>180</q1:Right>
+                        <q1:Top>60</q1:Top>
+                        <q1:Bottom>-60</q1:Bottom>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="q2:DrawMeshInstanced">
+                        <q2:ShaderName>CircleArray</q2:ShaderName>
+                        <q2:MeshName>Quad</q2:MeshName>
+                        <q2:Usage>DynamicDraw</q2:Usage>
+                        <q2:InstanceAttributes>
+                          <q2:InstanceAttributeMapping>
+                            <q2:Size>2</q2:Size>
+                            <q2:Normalized>false</q2:Normalized>
+                            <q2:Type>Float</q2:Type>
+                            <q2:Divisor>1</q2:Divisor>
+                          </q2:InstanceAttributeMapping>
+                        </q2:InstanceAttributes>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="WorkflowOutput" />
+                  </Nodes>
+                  <Edges>
+                    <Edge From="0" To="14" Label="Source2" />
+                    <Edge From="1" To="14" Label="Source3" />
+                    <Edge From="2" To="15" Label="Source4" />
+                    <Edge From="3" To="4" Label="Source1" />
+                    <Edge From="3" To="5" Label="Source1" />
+                    <Edge From="4" To="15" Label="Source2" />
+                    <Edge From="5" To="15" Label="Source3" />
+                    <Edge From="6" To="7" Label="Source1" />
+                    <Edge From="7" To="8" Label="Source1" />
+                    <Edge From="8" To="15" Label="Source5" />
+                    <Edge From="9" To="10" Label="Source1" />
+                    <Edge From="10" To="11" Label="Source1" />
+                    <Edge From="11" To="14" Label="Source4" />
+                    <Edge From="12" To="13" Label="Source1" />
+                    <Edge From="13" To="14" Label="Source1" />
+                    <Edge From="14" To="15" Label="Source1" />
+                    <Edge From="15" To="16" Label="Source1" />
+                    <Edge From="16" To="29" Label="Source2" />
+                    <Edge From="16" To="28" Label="Source2" />
+                    <Edge From="17" To="42" Label="Source4" />
+                    <Edge From="18" To="19" Label="Source1" />
+                    <Edge From="19" To="42" Label="Source5" />
+                    <Edge From="19" To="44" Label="Source2" />
+                    <Edge From="20" To="21" Label="Source1" />
+                    <Edge From="21" To="25" Label="Source1" />
+                    <Edge From="22" To="26" Label="Source1" />
+                    <Edge From="22" To="42" Label="Source7" />
+                    <Edge From="23" To="42" Label="Source6" />
+                    <Edge From="24" To="25" Label="Source2" />
+                    <Edge From="24" To="26" Label="Source2" />
+                    <Edge From="25" To="27" Label="Source1" />
+                    <Edge From="26" To="27" Label="Source2" />
+                    <Edge From="27" To="28" Label="Source1" />
+                    <Edge From="28" To="29" Label="Source1" />
+                    <Edge From="29" To="30" Label="Source1" />
+                    <Edge From="30" To="42" Label="Source1" />
+                    <Edge From="31" To="32" Label="Source1" />
+                    <Edge From="32" To="33" Label="Source1" />
+                    <Edge From="33" To="38" Label="Source1" />
+                    <Edge From="34" To="35" Label="Source1" />
+                    <Edge From="35" To="36" Label="Source1" />
+                    <Edge From="36" To="40" Label="Source1" />
+                    <Edge From="37" To="38" Label="Source2" />
+                    <Edge From="37" To="40" Label="Source2" />
+                    <Edge From="38" To="39" Label="Source1" />
+                    <Edge From="39" To="42" Label="Source2" />
+                    <Edge From="40" To="41" Label="Source1" />
+                    <Edge From="41" To="42" Label="Source3" />
+                    <Edge From="42" To="43" Label="Source1" />
+                    <Edge From="43" To="44" Label="Source1" />
+                    <Edge From="44" To="45" Label="Source1" />
+                    <Edge From="45" To="46" Label="Source1" />
+                  </Edges>
+                </Workflow>
+              </Expression>
+              <Expression xsi:type="Combinator">
+                <Combinator xsi:type="Zip" />
+              </Expression>
+              <Expression xsi:type="WorkflowOutput" />
+            </Nodes>
+            <Edges>
+              <Edge From="0" To="11" Label="Source1" />
+              <Edge From="0" To="12" Label="Source1" />
+              <Edge From="0" To="13" Label="Source1" />
+              <Edge From="0" To="14" Label="Source1" />
+              <Edge From="1" To="14" Label="Source2" />
+              <Edge From="1" To="13" Label="Source2" />
+              <Edge From="1" To="12" Label="Source2" />
+              <Edge From="1" To="11" Label="Source2" />
+              <Edge From="2" To="3" Label="Source1" />
+              <Edge From="3" To="4" Label="Source1" />
+              <Edge From="4" To="5" Label="Source1" />
+              <Edge From="5" To="11" Label="Source3" />
+              <Edge From="5" To="14" Label="Source3" />
+              <Edge From="6" To="7" Label="Source1" />
+              <Edge From="7" To="8" Label="Source1" />
+              <Edge From="8" To="9" Label="Source1" />
+              <Edge From="9" To="13" Label="Source3" />
+              <Edge From="9" To="12" Label="Source3" />
+              <Edge From="10" To="11" Label="Source4" />
+              <Edge From="10" To="14" Label="Source4" />
+              <Edge From="10" To="13" Label="Source4" />
+              <Edge From="10" To="12" Label="Source4" />
+              <Edge From="11" To="15" Label="Source1" />
+              <Edge From="12" To="15" Label="Source2" />
+              <Edge From="13" To="15" Label="Source3" />
+              <Edge From="14" To="15" Label="Source4" />
+              <Edge From="15" To="16" Label="Source1" />
+            </Edges>
+          </Workflow>
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="Combinator">
+          <Combinator xsi:type="q2:RenderTexture">
+            <q2:RenderState />
+            <q2:ClearColor>Gray</q2:ClearColor>
+            <q2:ClearMask>DepthBufferBit ColorBufferBit</q2:ClearMask>
+            <q2:Width xsi:nil="true" />
+            <q2:Height xsi:nil="true" />
+            <q2:InternalFormat>Rgba</q2:InternalFormat>
+            <q2:WrapS>Repeat</q2:WrapS>
+            <q2:WrapT>Repeat</q2:WrapT>
+            <q2:MinFilter>Linear</q2:MinFilter>
+            <q2:MagFilter>Linear</q2:MagFilter>
+          </Combinator>
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="BehaviorSubject">
+          <Name>TextureLeft</Name>
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="Combinator">
+          <Combinator xsi:type="Zip" />
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="IncludeWorkflow" Path="BonVision:Environment.PerspectiveViewport.bonsai">
+          <Light>
+            <X>0</X>
+            <Y>100000</Y>
+            <Z>0</Z>
+          </Light>
+          <FieldOfView>75</FieldOfView>
+          <Eye>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </Eye>
+          <Target>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>-100</Z>
+          </Target>
+          <Up>
+            <X>0</X>
+            <Y>1</Y>
+            <Z>0</Z>
+          </Up>
+          <NearClip>0.1</NearClip>
+          <FarClip>1000</FarClip>
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="Sink">
+          <Name>BindLeft</Name>
+          <Workflow>
+            <Nodes>
+              <Expression xsi:type="WorkflowInput">
+                <Name>Source1</Name>
+              </Expression>
+              <Expression xsi:type="ExternalizedMapping">
+                <Property Name="Name" />
+              </Expression>
+              <Expression xsi:type="SubscribeSubject">
+                <Name>TextureLeft</Name>
+              </Expression>
+              <Expression xsi:type="Combinator">
+                <Combinator xsi:type="WithLatestFrom" />
+              </Expression>
+              <Expression xsi:type="MemberSelector">
+                <Selector>Item2</Selector>
+              </Expression>
+              <Expression xsi:type="ExternalizedMapping">
+                <Property Name="ShaderName" />
+              </Expression>
+              <Expression xsi:type="Combinator">
+                <Combinator xsi:type="q2:BindTexture">
+                  <q2:TextureSlot>Texture0</q2:TextureSlot>
+                  <q2:ShaderName>TexturedModel</q2:ShaderName>
+                  <q2:TextureTarget>Texture2D</q2:TextureTarget>
+                </Combinator>
+              </Expression>
+              <Expression xsi:type="WorkflowOutput" />
+            </Nodes>
+            <Edges>
+              <Edge From="0" To="3" Label="Source1" />
+              <Edge From="1" To="2" Label="Source1" />
+              <Edge From="2" To="3" Label="Source2" />
+              <Edge From="3" To="4" Label="Source1" />
+              <Edge From="4" To="6" Label="Source1" />
+              <Edge From="5" To="6" Label="Source2" />
+              <Edge From="6" To="7" Label="Source1" />
+            </Edges>
+          </Workflow>
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawTexturedModel.bonsai">
+          <TranslationX>-1</TranslationX>
+          <TranslationY>0</TranslationY>
+          <TranslationZ>-3.5</TranslationZ>
+          <ScaleX>100</ScaleX>
+          <ScaleY>100</ScaleY>
+          <ScaleZ>100</ScaleZ>
+          <MeshName>Plane</MeshName>
+          <Ambient>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </Ambient>
+          <Diffuse>
+            <X>1</X>
+            <Y>1</Y>
+            <Z>1</Z>
+          </Diffuse>
+          <Specular>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </Specular>
+          <SpecularExponent>100</SpecularExponent>
+          <RotationZ>0</RotationZ>
+          <RotationY>1.57</RotationY>
+          <RotationX>0</RotationX>
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="IncludeWorkflow" Path="BonVision:Environment.GammaCorrection.bonsai">
+          <ClearColor>Gray</ClearColor>
+          <GammaLut xsi:nil="true" />
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="Combinator">
+          <Combinator xsi:type="Zip" />
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="Combinator">
+          <Combinator xsi:type="TakeUntil" />
+        </Builder>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="Combinator">
+          <Combinator xsi:type="Last" />
+        </Builder>
+      </Expression>
+    </Nodes>
+    <Edges>
+      <Edge From="0" To="9" Label="Source2" />
+      <Edge From="1" To="2" Label="Source1" />
+      <Edge From="2" To="6" Label="Source1" />
+      <Edge From="3" To="9" Label="Source4" />
+      <Edge From="4" To="5" Label="Source1" />
+      <Edge From="5" To="6" Label="Source2" />
+      <Edge From="6" To="9" Label="Source1" />
+      <Edge From="7" To="9" Label="Source3" />
+      <Edge From="8" To="9" Label="Source5" />
+      <Edge From="9" To="10" Label="Source1" />
+      <Edge From="10" To="11" Label="Source1" />
+      <Edge From="11" To="12" Label="Source1" />
+      <Edge From="12" To="13" Label="Source1" />
+      <Edge From="13" To="14" Label="Source1" />
+      <Edge From="15" To="16" Label="Source1" />
+      <Edge From="16" To="17" Label="Source1" />
+      <Edge From="17" To="18" Label="Source1" />
+      <Edge From="20" To="21" Label="Source1" />
+      <Edge From="21" To="22" Label="Source1" />
+      <Edge From="22" To="23" Label="Source1" />
+      <Edge From="23" To="24" Label="Source1" />
+      <Edge From="24" To="25" Label="Source1" />
+      <Edge From="25" To="26" Label="Source1" />
+      <Edge From="26" To="27" Label="Source1" />
+      <Edge From="27" To="28" Label="Source1" />
+      <Edge From="28" To="29" Label="Source1" />
+      <Edge From="29" To="30" Label="Source1" />
+      <Edge From="30" To="31" Label="Source1" />
+      <Edge From="31" To="32" Label="Source1" />
+    </Edges>
+  </Workflow>
+  <ExtensionTypes>
+    <Type>Bonsai.Expressions.DivideBuilder, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Expressions.FloatProperty, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Expressions.IntProperty, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Expressions.ParseBuilder, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Expressions.PropertySource`2[[Bonsai.Shaders.CreateScale, Bonsai.Shaders, Version=0.19.0.0, Culture=neutral, PublicKeyToken=null],[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Expressions.SinkBuilder, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Expressions.StringProperty, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.IO.SerialStringRead, Bonsai.System, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Reactive.CombineLatest, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Reactive.Last, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Reactive.Merge, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Reactive.Sample, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Reactive.Take, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Reactive.TakeUntil, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Reactive.WithLatestFrom, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Reactive.Zip, Bonsai.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Shaders.BindTexture, Bonsai.Shaders, Version=0.19.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Shaders.CreateTranslation, Bonsai.Shaders, Version=0.19.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Shaders.CreateVector4, Bonsai.Shaders, Version=0.19.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Shaders.CreateWindow, Bonsai.Shaders, Version=0.19.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Shaders.Delay, Bonsai.Shaders, Version=0.19.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Shaders.DrawMeshInstanced, Bonsai.Shaders, Version=0.19.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Shaders.LoadResources, Bonsai.Shaders, Version=0.19.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Shaders.MeshResources, Bonsai.Shaders, Version=0.19.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Shaders.RenderFrame, Bonsai.Shaders, Version=0.19.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Shaders.RenderTexture, Bonsai.Shaders, Version=0.19.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Shaders.RotateZ, Bonsai.Shaders, Version=0.19.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Shaders.Scale, Bonsai.Shaders, Version=0.19.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Shaders.ShaderResources, Bonsai.Shaders, Version=0.19.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Shaders.TextureResources, Bonsai.Shaders, Version=0.19.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>Bonsai.Shaders.UpdateUniform, Bonsai.Shaders, Version=0.19.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>GenerateDotField, Extensions, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>GenerateDotField2, Extensions, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>GenerateDotField3, Extensions, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>GenerateDotField4, Extensions, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>GenerateDotLives, Extensions, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>moveDots_2dLife, Extensions, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>moveDots_expansion, Extensions, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</Type>
+    <Type>wrapAroundDots, Extensions, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</Type>
+  </ExtensionTypes>
+</WorkflowBuilder>
