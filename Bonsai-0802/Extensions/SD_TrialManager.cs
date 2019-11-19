@@ -112,8 +112,8 @@ public class SD_TrialManager
             // assign outputs:
             // <left speed, right speed>
             // <meanSpeedIndex, ratioIndex, left/right -1/1, nRatios>
-            Console.WriteLine("meanSpeeds: " + meanSpeed);
-            Console.WriteLine("ratio: " + speedRatio);
+            //Console.WriteLine("meanSpeeds: " + meanSpeed);
+            //Console.WriteLine("ratio: " + speedRatio);
             Console.WriteLine("pRight: " + pRight);
 
             var speeds = new Tuple<double, double>(-1f*meanSpeed/Math.Sqrt(speedRatio), -1f*meanSpeed*Math.Sqrt(speedRatio));
