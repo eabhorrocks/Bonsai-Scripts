@@ -23,7 +23,7 @@ public class TrackEngagementTest
             }
 
             int count = trialResponses.Count(x => x == 3);
-            Console.WriteLine(count);
+            //Console.WriteLine(count);
 
             double pEngaged = (double)count/(double)maxListLength;
 
