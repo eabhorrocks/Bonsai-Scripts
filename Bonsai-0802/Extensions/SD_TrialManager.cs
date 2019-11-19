@@ -31,7 +31,7 @@ public class SD_TrialManager
             float speedRatio = 0f; // output needs to be initialised for script to compile
             float bias = 0f;
             float totalNorm = 0f;
-            float pRight = 0.5f;
+            float pRight;
             int ratioIndexToTest = 99;
             int nSpeeds = meanSpeedList.Count();
             int meanSpeedIndexToTest = 99;
@@ -75,10 +75,10 @@ public class SD_TrialManager
             {
             for (int i=0; i<nRatios; i++)
             {   // here 1st [] indexes into perf track list for the mean speed, [i] is ratio index, [0:3] are the int array indexes
-                float nr = pTrackList[meanSpeedIndexToTest][i][0]; // # right trials
-                float cr = pTrackList[meanSpeedIndexToTest][i][1]; // # correct right trials
-                float nl = pTrackList[meanSpeedIndexToTest][i][2]; // # left trials
-                float cl = pTrackList[meanSpeedIndexToTest][i][3]; // # correct left trials
+                float nr = pTrackList[meanSpeedIndexToTest][i][0] + 1; // # right trials
+                float cr = pTrackList[meanSpeedIndexToTest][i][1] + 1; // # correct right trials
+                float nl = pTrackList[meanSpeedIndexToTest][i][2] + 1; // # left trials
+                float cl = pTrackList[meanSpeedIndexToTest][i][3] + 1; // # correct left trials
 
                 // adjustment for this ratio is diff in proportion correct, weighted by speed ratio, weighted by total trials for that ratio.
                 bias = bias + (((float)(cr/nr) - (float)(cl/nl)) * RatiosList[meanSpeedIndexToTest][i] * (nl+nr));
@@ -89,6 +89,7 @@ public class SD_TrialManager
             // ensure pRight doesn't go outside acceptable range
             if (pRight < minPRight) { pRight = minPRight; }
             if (pRight > 1-minPRight) { pRight = 1-minPRight;}
+            Console.WriteLine("pr pre nan" + pRight);
             } //  end autobias
             if (Single.IsNaN(pRight)) // if first trials/error, revert to manual setting
             {

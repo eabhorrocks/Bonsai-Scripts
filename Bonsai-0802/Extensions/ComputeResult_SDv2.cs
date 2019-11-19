@@ -29,7 +29,7 @@ public class ComputeResult_SDv2
             int nRatios = otherInfo.Item4;
             
 
-            Console.WriteLine("response: " + response);
+            //Console.WriteLine("response: " + response);
             // if mouse responded, increment n trials for left/right at that ratio.
             // if mouse was also correct, increment total correct trials for left/right at that ratio
             int trialOutcome = 3; // assume no response by default
@@ -55,10 +55,10 @@ public class ComputeResult_SDv2
                 }
             }
 
-            Console.WriteLine(pTrack[meanSpeedIndex][ratioIndex][0]);
-            Console.WriteLine(pTrack[meanSpeedIndex][ratioIndex][1]);
-            Console.WriteLine(pTrack[meanSpeedIndex][ratioIndex][2]);
-            Console.WriteLine(pTrack[meanSpeedIndex][ratioIndex][3]);
+            //Console.WriteLine(pTrack[meanSpeedIndex][ratioIndex][0]);
+            //Console.WriteLine(pTrack[meanSpeedIndex][ratioIndex][1]);
+            //Console.WriteLine(pTrack[meanSpeedIndex][ratioIndex][2]);
+            //Console.WriteLine(pTrack[meanSpeedIndex][ratioIndex][3]);
 
             // trial outcomes (int)
             // 0: incorrect, 1: left correct, 2: right correct, 3: no response

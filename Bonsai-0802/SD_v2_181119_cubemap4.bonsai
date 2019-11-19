@@ -20234,7 +20234,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                               <q1:float>50</q1:float>
                             </q1:meanSpeedProbs>
                             <q1:autoBias>true</q1:autoBias>
-                            <q1:biasScaling>0.6</q1:biasScaling>
+                            <q1:biasScaling>0.4</q1:biasScaling>
                             <q1:pRightManual>0.5</q1:pRightManual>
                             <q1:minPRight>0.1</q1:minPRight>
                           </Combinator>
@@ -20410,7 +20410,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-3</Value>
+                                        <Value>-12</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -20620,7 +20620,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="q1:moveDots_2dLife">
-                                        <q1:VelocityX>-3</q1:VelocityX>
+                                        <q1:VelocityX>-12</q1:VelocityX>
                                         <q1:VelocityY>0</q1:VelocityY>
                                         <q1:Coherence>100</q1:Coherence>
                                         <q1:dotLifetimeBool>0</q1:dotLifetimeBool>
@@ -20811,7 +20811,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-3</Value>
+                                        <Value>-12</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -20988,7 +20988,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="q1:moveDots_2dLife">
-                                        <q1:VelocityX>-3</q1:VelocityX>
+                                        <q1:VelocityX>-12</q1:VelocityX>
                                         <q1:VelocityY>0</q1:VelocityY>
                                         <q1:Coherence>100</q1:Coherence>
                                         <q1:dotLifetimeBool>0</q1:dotLifetimeBool>
@@ -21174,7 +21174,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-3</Value>
+                                        <Value>-12</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -21351,7 +21351,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="q1:moveDots_2dLife">
-                                        <q1:VelocityX>-3</q1:VelocityX>
+                                        <q1:VelocityX>-12</q1:VelocityX>
                                         <q1:VelocityY>0</q1:VelocityY>
                                         <q1:Coherence>100</q1:Coherence>
                                         <q1:dotLifetimeBool>0</q1:dotLifetimeBool>
@@ -21532,7 +21532,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-3</Value>
+                                        <Value>-12</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -21712,7 +21712,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="q1:moveDots_2dLife">
-                                        <q1:VelocityX>-3</q1:VelocityX>
+                                        <q1:VelocityX>-12</q1:VelocityX>
                                         <q1:VelocityY>0</q1:VelocityY>
                                         <q1:Coherence>100</q1:Coherence>
                                         <q1:dotLifetimeBool>0</q1:dotLifetimeBool>
@@ -21995,7 +21995,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-12</Value>
+                                        <Value>-3</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -22175,7 +22175,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="q1:moveDots_2dLife">
-                                        <q1:VelocityX>-12</q1:VelocityX>
+                                        <q1:VelocityX>-3</q1:VelocityX>
                                         <q1:VelocityY>0</q1:VelocityY>
                                         <q1:Coherence>100</q1:Coherence>
                                         <q1:dotLifetimeBool>0</q1:dotLifetimeBool>
@@ -22360,7 +22360,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-12</Value>
+                                        <Value>-3</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -22537,7 +22537,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="q1:moveDots_2dLife">
-                                        <q1:VelocityX>-12</q1:VelocityX>
+                                        <q1:VelocityX>-3</q1:VelocityX>
                                         <q1:VelocityY>0</q1:VelocityY>
                                         <q1:Coherence>100</q1:Coherence>
                                         <q1:dotLifetimeBool>0</q1:dotLifetimeBool>
@@ -22723,7 +22723,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-12</Value>
+                                        <Value>-3</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -22900,7 +22900,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="q1:moveDots_2dLife">
-                                        <q1:VelocityX>-12</q1:VelocityX>
+                                        <q1:VelocityX>-3</q1:VelocityX>
                                         <q1:VelocityY>0</q1:VelocityY>
                                         <q1:Coherence>100</q1:Coherence>
                                         <q1:dotLifetimeBool>0</q1:dotLifetimeBool>
@@ -23081,7 +23081,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-12</Value>
+                                        <Value>-3</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -23261,7 +23261,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="q1:moveDots_2dLife">
-                                        <q1:VelocityX>-12</q1:VelocityX>
+                                        <q1:VelocityX>-3</q1:VelocityX>
                                         <q1:VelocityY>0</q1:VelocityY>
                                         <q1:Coherence>100</q1:Coherence>
                                         <q1:dotLifetimeBool>0</q1:dotLifetimeBool>
@@ -23599,7 +23599,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                         <Expression xsi:type="Disable">
                           <Builder xsi:type="IncludeWorkflow" Path="BonVision:Environment.GammaCorrection.bonsai">
                             <ClearColor>Gray</ClearColor>
-                            <GammaLut>C:\Users\edward.horrocks\Documents\MATLAB\mrig_norm_LUT.bmp</GammaLut>
+                            <GammaLut>Extensions\mrig_norm_LUT.bmp</GammaLut>
                           </Builder>
                         </Expression>
                         <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.DrawViewport.bonsai">
@@ -23615,7 +23615,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                                 <gl:StateConfiguration xsi:type="gl:ViewportState">
                                   <gl:X>0</gl:X>
                                   <gl:Y>0</gl:Y>
-                                  <gl:Width>1</gl:Width>
+                                  <gl:Width>0.333</gl:Width>
                                   <gl:Height>1</gl:Height>
                                 </gl:StateConfiguration>
                               </gl:RenderState>
@@ -23639,7 +23639,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                         <Expression xsi:type="Disable">
                           <Builder xsi:type="IncludeWorkflow" Path="BonVision:Environment.GammaCorrection.bonsai">
                             <ClearColor>Gray</ClearColor>
-                            <GammaLut>C:\Users\edward.horrocks\Documents\MATLAB\mrig_norm_LUT.bmp</GammaLut>
+                            <GammaLut>Extensions\mrig_norm_LUT.bmp</GammaLut>
                           </Builder>
                         </Expression>
                         <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.DrawViewport.bonsai">
@@ -23653,9 +23653,9 @@ Item3.Item6 as CohRight)</scr:Expression>
                             <Combinator xsi:type="gl:UpdateRenderState">
                               <gl:RenderState>
                                 <gl:StateConfiguration xsi:type="gl:ViewportState">
-                                  <gl:X>0</gl:X>
+                                  <gl:X>0.333</gl:X>
                                   <gl:Y>0</gl:Y>
-                                  <gl:Width>1</gl:Width>
+                                  <gl:Width>0.333</gl:Width>
                                   <gl:Height>1</gl:Height>
                                 </gl:StateConfiguration>
                               </gl:RenderState>
@@ -23679,7 +23679,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                         <Expression xsi:type="Disable">
                           <Builder xsi:type="IncludeWorkflow" Path="BonVision:Environment.GammaCorrection.bonsai">
                             <ClearColor>Gray</ClearColor>
-                            <GammaLut>C:\Users\edward.horrocks\Documents\MATLAB\mrig_norm_LUT.bmp</GammaLut>
+                            <GammaLut>Extensions\mrig_norm_LUT.bmp</GammaLut>
                           </Builder>
                         </Expression>
                         <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.DrawViewport.bonsai">
@@ -23693,9 +23693,9 @@ Item3.Item6 as CohRight)</scr:Expression>
                             <Combinator xsi:type="gl:UpdateRenderState">
                               <gl:RenderState>
                                 <gl:StateConfiguration xsi:type="gl:ViewportState">
-                                  <gl:X>0</gl:X>
+                                  <gl:X>0.667</gl:X>
                                   <gl:Y>0</gl:Y>
-                                  <gl:Width>1</gl:Width>
+                                  <gl:Width>0.333</gl:Width>
                                   <gl:Height>1</gl:Height>
                                 </gl:StateConfiguration>
                               </gl:RenderState>
@@ -24268,7 +24268,7 @@ Item3.Item6 as CohRight)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="rx:Delay">
-                      <rx:DueTime>PT2.808S</rx:DueTime>
+                      <rx:DueTime>PT2.635S</rx:DueTime>
                     </Combinator>
                   </Expression>
                   <Expression xsi:type="Unit" />
@@ -30123,7 +30123,11 @@ def process(value):
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="q1:TrackEngagementTest">
-                <q1:trialResponses />
+                <q1:trialResponses>
+                  <q1:int>3</q1:int>
+                  <q1:int>3</q1:int>
+                  <q1:int>3</q1:int>
+                </q1:trialResponses>
                 <q1:maxListLength>20</q1:maxListLength>
               </Combinator>
             </Expression>
