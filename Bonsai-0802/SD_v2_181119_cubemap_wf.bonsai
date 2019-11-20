@@ -19018,101 +19018,16 @@ Item3.Item6 as CohRight)</scr:Expression>
                           <Property Name="minPRight" />
                         </Expression>
                         <Expression xsi:type="Combinator">
-                          <Combinator xsi:type="q1:SD_TrialManager">
-                            <q1:meanSpeedList>
-                              <q1:float>240</q1:float>
-                              <q1:float>120</q1:float>
-                            </q1:meanSpeedList>
-                            <q1:RatiosList>
-                              <q1:ArrayOfFloat>
-                                <q1:float>6</q1:float>
-                                <q1:float>5</q1:float>
-                                <q1:float>2</q1:float>
-                                <q1:float>1.5</q1:float>
-                              </q1:ArrayOfFloat>
-                              <q1:ArrayOfFloat>
-                                <q1:float>6</q1:float>
-                                <q1:float>5</q1:float>
-                                <q1:float>2</q1:float>
-                                <q1:float>1.5</q1:float>
-                              </q1:ArrayOfFloat>
-                            </q1:RatiosList>
-                            <q1:RatioProbsList>
-                              <q1:ArrayOfFloat>
-                                <q1:float>75</q1:float>
-                                <q1:float>25</q1:float>
-                                <q1:float>0</q1:float>
-                                <q1:float>0</q1:float>
-                              </q1:ArrayOfFloat>
-                              <q1:ArrayOfFloat>
-                                <q1:float>75</q1:float>
-                                <q1:float>25</q1:float>
-                                <q1:float>0</q1:float>
-                                <q1:float>0</q1:float>
-                              </q1:ArrayOfFloat>
-                            </q1:RatioProbsList>
-                            <q1:pTrackList>
-                              <q1:ArrayOfArrayOfInt>
-                                <q1:ArrayOfInt>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                </q1:ArrayOfInt>
-                                <q1:ArrayOfInt>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                </q1:ArrayOfInt>
-                                <q1:ArrayOfInt>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                </q1:ArrayOfInt>
-                                <q1:ArrayOfInt>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                </q1:ArrayOfInt>
-                              </q1:ArrayOfArrayOfInt>
-                              <q1:ArrayOfArrayOfInt>
-                                <q1:ArrayOfInt>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                </q1:ArrayOfInt>
-                                <q1:ArrayOfInt>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                </q1:ArrayOfInt>
-                                <q1:ArrayOfInt>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                </q1:ArrayOfInt>
-                                <q1:ArrayOfInt>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                  <q1:int>0</q1:int>
-                                </q1:ArrayOfInt>
-                              </q1:ArrayOfArrayOfInt>
-                            </q1:pTrackList>
-                            <q1:meanSpeedProbs>
-                              <q1:float>50</q1:float>
-                              <q1:float>50</q1:float>
-                            </q1:meanSpeedProbs>
-                            <q1:autoBias>true</q1:autoBias>
-                            <q1:biasScaling>0.4</q1:biasScaling>
-                            <q1:pRightManual>0.5</q1:pRightManual>
-                            <q1:minPRight>0.1</q1:minPRight>
+                          <Combinator xsi:type="q1:SD_TrialManager_WF">
+                            <q1:meanSpeedList />
+                            <q1:RatiosList />
+                            <q1:RatioProbsList />
+                            <q1:pTrackList />
+                            <q1:meanSpeedProbs />
+                            <q1:autoBias>false</q1:autoBias>
+                            <q1:biasScaling>0</q1:biasScaling>
+                            <q1:pRightManual>0</q1:pRightManual>
+                            <q1:minPRight>0</q1:minPRight>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="MemberSelector">
@@ -22906,9 +22821,6 @@ Item3.Item6 as CohRight)</scr:Expression>
                         </Expression>
                         <Expression xsi:type="MemberSelector">
                           <Selector>TimeStep.ElapsedRealTime</Selector>
-                        </Expression>
-                        <Expression xsi:type="Combinator">
-                          <Combinator xsi:type="q1:SD_TrialManager_WF" />
                         </Expression>
                       </Nodes>
                       <Edges>
@@ -28911,18 +28823,14 @@ def process(value):
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="q1:initialisePerfTrack_SDv2">
-                <q1:meanSpeed>120</q1:meanSpeed>
+                <q1:meanSpeed>200</q1:meanSpeed>
                 <q1:Ratios>
-                  <q1:float>6</q1:float>
-                  <q1:float>5</q1:float>
-                  <q1:float>2</q1:float>
-                  <q1:float>1.5</q1:float>
+                  <q1:float>0.95</q1:float>
+                  <q1:float>0.8</q1:float>
                 </q1:Ratios>
                 <q1:RatioProbs>
                   <q1:float>75</q1:float>
                   <q1:float>25</q1:float>
-                  <q1:float>0</q1:float>
-                  <q1:float>0</q1:float>
                 </q1:RatioProbs>
               </Combinator>
             </Expression>
@@ -28939,18 +28847,14 @@ def process(value):
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="q1:initialisePerfTrack_SDv2">
-                <q1:meanSpeed>240</q1:meanSpeed>
+                <q1:meanSpeed>320</q1:meanSpeed>
                 <q1:Ratios>
-                  <q1:float>6</q1:float>
-                  <q1:float>5</q1:float>
-                  <q1:float>2</q1:float>
-                  <q1:float>1.5</q1:float>
+                  <q1:float>0.95</q1:float>
+                  <q1:float>0.8</q1:float>
                 </q1:Ratios>
                 <q1:RatioProbs>
                   <q1:float>75</q1:float>
                   <q1:float>25</q1:float>
-                  <q1:float>0</q1:float>
-                  <q1:float>0</q1:float>
                 </q1:RatioProbs>
               </Combinator>
             </Expression>
