@@ -1,9 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <WorkflowBuilder Version="2.4.0"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:q1="clr-namespace:Bonsai.CLEyeMulticam;assembly=Bonsai.CLEyeMulticam"
+                 xmlns:cv="clr-namespace:Bonsai.Vision;assembly=Bonsai.Vision"
                  xmlns="https://bonsai-rx.org/2018/workflow">
   <Workflow>
-    <Nodes />
-    <Edges />
+    <Nodes>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="q1:CLEyeSource">
+          <q1:CameraGuid xsi:nil="true" />
+          <q1:CameraIndex>0</q1:CameraIndex>
+          <q1:ColorMode>CLEYE_COLOR_RAW</q1:ColorMode>
+          <q1:Resolution>CLEYE_VGA</q1:Resolution>
+          <q1:FrameRate>60</q1:FrameRate>
+          <q1:AutoGain>true</q1:AutoGain>
+          <q1:AutoExposure>true</q1:AutoExposure>
+          <q1:AutoWhiteBalance>true</q1:AutoWhiteBalance>
+          <q1:Gain>0</q1:Gain>
+          <q1:Exposure>511</q1:Exposure>
+          <q1:WhiteBalanceRed>0</q1:WhiteBalanceRed>
+          <q1:WhiteBalanceGreen>0</q1:WhiteBalanceGreen>
+          <q1:WhiteBalanceBlue>0</q1:WhiteBalanceBlue>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="cv:Crop">
+          <cv:RegionOfInterest>
+            <cv:X>365</cv:X>
+            <cv:Y>169</cv:Y>
+            <cv:Width>122</cv:Width>
+            <cv:Height>128</cv:Height>
+          </cv:RegionOfInterest>
+        </Combinator>
+      </Expression>
+    </Nodes>
+    <Edges>
+      <Edge From="0" To="1" Label="Source1" />
+    </Edges>
   </Workflow>
 </WorkflowBuilder>
