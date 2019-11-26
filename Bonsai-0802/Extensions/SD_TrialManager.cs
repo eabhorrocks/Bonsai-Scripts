@@ -16,6 +16,8 @@ public class SD_TrialManager
     public List<List<float>> RatioProbsList {get; set; }  
     public List<List<int[]>> pTrackList {get; set; } 
     public List<float> meanSpeedProbs {get; set; }
+    public List<int> rightInARow {get; set; }
+    public int maxInARow {get; set; }
     public bool autoBias {get; set; }
     public float biasScaling {get; set; }
     public float pRightManual {get; set; }
@@ -89,7 +91,6 @@ public class SD_TrialManager
             // ensure pRight doesn't go outside acceptable range
             if (pRight < minPRight) { pRight = minPRight; }
             if (pRight > 1-minPRight) { pRight = 1-minPRight;}
-            Console.WriteLine("pr pre nan" + pRight);
             } //  end autobias
             if (Single.IsNaN(pRight)) // if first trials/error, revert to manual setting
             {
@@ -98,6 +99,16 @@ public class SD_TrialManager
             
             
             float biasrnd = (float)rng.NextDouble(); // random number for left / right faster
+            // check if too many fastest on left or right side in a row
+            if (rightInARow.All(x => x == 1)) // if list is all right
+            {
+                biasrnd = 1; // next trial must be left
+            }
+            if (rightInARow.All(x => x == -1))
+            {
+                biasrnd = 0; // next trial must be right
+            }
+            
             if (biasrnd <= pRight) // compare to pre-calculated pRight value (probability of right faster)
             {
             rightFaster = 1; //right is faster
@@ -109,6 +120,14 @@ public class SD_TrialManager
             rightFaster = -1; // left is faster
             speedRatio = 1f/RatiosList[meanSpeedIndexToTest][ratioIndexToTest]; // if left is faster, we use the inverse ratio (geomean)
             }
+
+            // add right faster, remove first element from list if needed
+            rightInARow.Add(rightFaster);
+            if (rightInARow.Count > maxInARow)
+            { 
+                rightInARow.RemoveAt(0); 
+            }
+            
             
             // assign outputs:
             // <left speed, right speed>
