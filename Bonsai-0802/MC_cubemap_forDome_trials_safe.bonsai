@@ -7,9 +7,9 @@
                  xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
                  xmlns:io="clr-namespace:Bonsai.IO;assembly=Bonsai.System"
                  xmlns:p2="clr-namespace:;assembly=Extensions"
-                 xmlns:scr="clr-namespace:Bonsai.Scripting;assembly=Bonsai.Scripting"
                  xmlns:sys="clr-namespace:System;assembly=mscorlib"
                  xmlns:p3="clr-namespace:OpenTK;assembly=OpenTK"
+                 xmlns:scr="clr-namespace:Bonsai.Scripting;assembly=Bonsai.Scripting"
                  xmlns:wie="clr-namespace:Bonsai.Windows.Input;assembly=Bonsai.Windows.Input"
                  xmlns="https://bonsai-rx.org/2018/workflow">
   <Workflow>
@@ -315,12 +315,12 @@
                   <p2:MC3DBasicParameters>
                     <p2:Duration>2</p2:Duration>
                     <p2:Colour1>0</p2:Colour1>
-                    <p2:Colour2>0</p2:Colour2>
+                    <p2:Colour2>1</p2:Colour2>
                     <p2:numDots1>400</p2:numDots1>
                     <p2:numDots2>400</p2:numDots2>
                     <p2:dotLifeBool>0</p2:dotLifeBool>
                     <p2:dotLifetime>20</p2:dotLifetime>
-                    <p2:Contrast>0</p2:Contrast>
+                    <p2:Contrast>1</p2:Contrast>
                     <p2:Coherence>100</p2:Coherence>
                     <p2:VelX>10</p2:VelX>
                     <p2:VelY>0</p2:VelY>
@@ -329,12 +329,12 @@
                   <p2:MC3DBasicParameters>
                     <p2:Duration>2</p2:Duration>
                     <p2:Colour1>0</p2:Colour1>
-                    <p2:Colour2>0</p2:Colour2>
+                    <p2:Colour2>1</p2:Colour2>
                     <p2:numDots1>400</p2:numDots1>
                     <p2:numDots2>400</p2:numDots2>
                     <p2:dotLifeBool>0</p2:dotLifeBool>
                     <p2:dotLifetime>20</p2:dotLifetime>
-                    <p2:Contrast>0</p2:Contrast>
+                    <p2:Contrast>1</p2:Contrast>
                     <p2:Coherence>100</p2:Coherence>
                     <p2:VelX>-10</p2:VelX>
                     <p2:VelY>0</p2:VelY>
@@ -343,12 +343,12 @@
                   <p2:MC3DBasicParameters>
                     <p2:Duration>2</p2:Duration>
                     <p2:Colour1>0</p2:Colour1>
-                    <p2:Colour2>0</p2:Colour2>
+                    <p2:Colour2>1</p2:Colour2>
                     <p2:numDots1>400</p2:numDots1>
                     <p2:numDots2>400</p2:numDots2>
                     <p2:dotLifeBool>0</p2:dotLifeBool>
                     <p2:dotLifetime>20</p2:dotLifetime>
-                    <p2:Contrast>0</p2:Contrast>
+                    <p2:Contrast>1</p2:Contrast>
                     <p2:Coherence>100</p2:Coherence>
                     <p2:VelX>0</p2:VelX>
                     <p2:VelY>10</p2:VelY>
@@ -357,12 +357,12 @@
                   <p2:MC3DBasicParameters>
                     <p2:Duration>2</p2:Duration>
                     <p2:Colour1>0</p2:Colour1>
-                    <p2:Colour2>0</p2:Colour2>
+                    <p2:Colour2>1</p2:Colour2>
                     <p2:numDots1>400</p2:numDots1>
                     <p2:numDots2>400</p2:numDots2>
                     <p2:dotLifeBool>0</p2:dotLifeBool>
                     <p2:dotLifetime>20</p2:dotLifetime>
-                    <p2:Contrast>0</p2:Contrast>
+                    <p2:Contrast>1</p2:Contrast>
                     <p2:Coherence>100</p2:Coherence>
                     <p2:VelX>0</p2:VelX>
                     <p2:VelY>-10</p2:VelY>
@@ -371,12 +371,12 @@
                   <p2:MC3DBasicParameters>
                     <p2:Duration>2</p2:Duration>
                     <p2:Colour1>0</p2:Colour1>
-                    <p2:Colour2>0</p2:Colour2>
+                    <p2:Colour2>1</p2:Colour2>
                     <p2:numDots1>400</p2:numDots1>
                     <p2:numDots2>400</p2:numDots2>
                     <p2:dotLifeBool>0</p2:dotLifeBool>
                     <p2:dotLifetime>20</p2:dotLifetime>
-                    <p2:Contrast>0</p2:Contrast>
+                    <p2:Contrast>1</p2:Contrast>
                     <p2:Coherence>100</p2:Coherence>
                     <p2:VelX>0</p2:VelX>
                     <p2:VelY>0</p2:VelY>
@@ -385,12 +385,12 @@
                   <p2:MC3DBasicParameters>
                     <p2:Duration>2</p2:Duration>
                     <p2:Colour1>0</p2:Colour1>
-                    <p2:Colour2>0</p2:Colour2>
+                    <p2:Colour2>1</p2:Colour2>
                     <p2:numDots1>400</p2:numDots1>
                     <p2:numDots2>400</p2:numDots2>
                     <p2:dotLifeBool>0</p2:dotLifeBool>
                     <p2:dotLifetime>20</p2:dotLifetime>
-                    <p2:Contrast>0</p2:Contrast>
+                    <p2:Contrast>1</p2:Contrast>
                     <p2:Coherence>100</p2:Coherence>
                     <p2:VelX>0</p2:VelX>
                     <p2:VelY>0</p2:VelY>
@@ -412,251 +412,6 @@
               <VelX>0</VelX>
               <VelY>0</VelY>
               <VelZ>0</VelZ>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="p2:MC3DBasicSpec">
-                <p2:Trials>
-                  <p2:MC3DBasicParameters>
-                    <p2:Duration>2</p2:Duration>
-                    <p2:Colour1>0</p2:Colour1>
-                    <p2:Colour2>0</p2:Colour2>
-                    <p2:numDots1>400</p2:numDots1>
-                    <p2:numDots2>400</p2:numDots2>
-                    <p2:dotLifeBool>0</p2:dotLifeBool>
-                    <p2:dotLifetime>20</p2:dotLifetime>
-                    <p2:Contrast>0</p2:Contrast>
-                    <p2:Coherence>50</p2:Coherence>
-                    <p2:VelX>10</p2:VelX>
-                    <p2:VelY>0</p2:VelY>
-                    <p2:VelZ>0</p2:VelZ>
-                  </p2:MC3DBasicParameters>
-                  <p2:MC3DBasicParameters>
-                    <p2:Duration>2</p2:Duration>
-                    <p2:Colour1>0</p2:Colour1>
-                    <p2:Colour2>0</p2:Colour2>
-                    <p2:numDots1>400</p2:numDots1>
-                    <p2:numDots2>400</p2:numDots2>
-                    <p2:dotLifeBool>0</p2:dotLifeBool>
-                    <p2:dotLifetime>20</p2:dotLifetime>
-                    <p2:Contrast>0</p2:Contrast>
-                    <p2:Coherence>50</p2:Coherence>
-                    <p2:VelX>-10</p2:VelX>
-                    <p2:VelY>0</p2:VelY>
-                    <p2:VelZ>0</p2:VelZ>
-                  </p2:MC3DBasicParameters>
-                  <p2:MC3DBasicParameters>
-                    <p2:Duration>2</p2:Duration>
-                    <p2:Colour1>0</p2:Colour1>
-                    <p2:Colour2>0</p2:Colour2>
-                    <p2:numDots1>400</p2:numDots1>
-                    <p2:numDots2>400</p2:numDots2>
-                    <p2:dotLifeBool>0</p2:dotLifeBool>
-                    <p2:dotLifetime>20</p2:dotLifetime>
-                    <p2:Contrast>0</p2:Contrast>
-                    <p2:Coherence>50</p2:Coherence>
-                    <p2:VelX>0</p2:VelX>
-                    <p2:VelY>10</p2:VelY>
-                    <p2:VelZ>0</p2:VelZ>
-                  </p2:MC3DBasicParameters>
-                  <p2:MC3DBasicParameters>
-                    <p2:Duration>2</p2:Duration>
-                    <p2:Colour1>0</p2:Colour1>
-                    <p2:Colour2>0</p2:Colour2>
-                    <p2:numDots1>400</p2:numDots1>
-                    <p2:numDots2>400</p2:numDots2>
-                    <p2:dotLifeBool>0</p2:dotLifeBool>
-                    <p2:dotLifetime>20</p2:dotLifetime>
-                    <p2:Contrast>0</p2:Contrast>
-                    <p2:Coherence>50</p2:Coherence>
-                    <p2:VelX>0</p2:VelX>
-                    <p2:VelY>-10</p2:VelY>
-                    <p2:VelZ>0</p2:VelZ>
-                  </p2:MC3DBasicParameters>
-                  <p2:MC3DBasicParameters>
-                    <p2:Duration>2</p2:Duration>
-                    <p2:Colour1>0</p2:Colour1>
-                    <p2:Colour2>0</p2:Colour2>
-                    <p2:numDots1>400</p2:numDots1>
-                    <p2:numDots2>400</p2:numDots2>
-                    <p2:dotLifeBool>0</p2:dotLifeBool>
-                    <p2:dotLifetime>20</p2:dotLifetime>
-                    <p2:Contrast>0</p2:Contrast>
-                    <p2:Coherence>50</p2:Coherence>
-                    <p2:VelX>0</p2:VelX>
-                    <p2:VelY>0</p2:VelY>
-                    <p2:VelZ>10</p2:VelZ>
-                  </p2:MC3DBasicParameters>
-                  <p2:MC3DBasicParameters>
-                    <p2:Duration>2</p2:Duration>
-                    <p2:Colour1>0</p2:Colour1>
-                    <p2:Colour2>0</p2:Colour2>
-                    <p2:numDots1>400</p2:numDots1>
-                    <p2:numDots2>400</p2:numDots2>
-                    <p2:dotLifeBool>0</p2:dotLifeBool>
-                    <p2:dotLifetime>20</p2:dotLifetime>
-                    <p2:Contrast>0</p2:Contrast>
-                    <p2:Coherence>50</p2:Coherence>
-                    <p2:VelX>0</p2:VelX>
-                    <p2:VelY>0</p2:VelY>
-                    <p2:VelZ>-10</p2:VelZ>
-                  </p2:MC3DBasicParameters>
-                </p2:Trials>
-              </Combinator>
-            </Expression>
-            <Expression xsi:type="IncludeWorkflow" Path="Extensions\EnsureMC3DParams.bonsai">
-              <Duration>2</Duration>
-              <Colour1>1</Colour1>
-              <Colour2>1</Colour2>
-              <numDots1>1</numDots1>
-              <numDots2>1</numDots2>
-              <dotLifeBool>0</dotLifeBool>
-              <dotLifetime>0</dotLifetime>
-              <Contrast>0</Contrast>
-              <Coherence>100</Coherence>
-              <VelX>0</VelX>
-              <VelY>0</VelY>
-              <VelZ>0</VelZ>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="p2:MC3DBasicSpec">
-                <p2:Trials>
-                  <p2:MC3DBasicParameters>
-                    <p2:Duration>2</p2:Duration>
-                    <p2:Colour1>0</p2:Colour1>
-                    <p2:Colour2>0</p2:Colour2>
-                    <p2:numDots1>400</p2:numDots1>
-                    <p2:numDots2>400</p2:numDots2>
-                    <p2:dotLifeBool>0</p2:dotLifeBool>
-                    <p2:dotLifetime>20</p2:dotLifetime>
-                    <p2:Contrast>0</p2:Contrast>
-                    <p2:Coherence>25</p2:Coherence>
-                    <p2:VelX>10</p2:VelX>
-                    <p2:VelY>0</p2:VelY>
-                    <p2:VelZ>0</p2:VelZ>
-                  </p2:MC3DBasicParameters>
-                  <p2:MC3DBasicParameters>
-                    <p2:Duration>2</p2:Duration>
-                    <p2:Colour1>0</p2:Colour1>
-                    <p2:Colour2>0</p2:Colour2>
-                    <p2:numDots1>400</p2:numDots1>
-                    <p2:numDots2>400</p2:numDots2>
-                    <p2:dotLifeBool>0</p2:dotLifeBool>
-                    <p2:dotLifetime>20</p2:dotLifetime>
-                    <p2:Contrast>0</p2:Contrast>
-                    <p2:Coherence>25</p2:Coherence>
-                    <p2:VelX>-10</p2:VelX>
-                    <p2:VelY>0</p2:VelY>
-                    <p2:VelZ>0</p2:VelZ>
-                  </p2:MC3DBasicParameters>
-                  <p2:MC3DBasicParameters>
-                    <p2:Duration>2</p2:Duration>
-                    <p2:Colour1>0</p2:Colour1>
-                    <p2:Colour2>0</p2:Colour2>
-                    <p2:numDots1>400</p2:numDots1>
-                    <p2:numDots2>400</p2:numDots2>
-                    <p2:dotLifeBool>0</p2:dotLifeBool>
-                    <p2:dotLifetime>20</p2:dotLifetime>
-                    <p2:Contrast>0</p2:Contrast>
-                    <p2:Coherence>25</p2:Coherence>
-                    <p2:VelX>0</p2:VelX>
-                    <p2:VelY>10</p2:VelY>
-                    <p2:VelZ>0</p2:VelZ>
-                  </p2:MC3DBasicParameters>
-                  <p2:MC3DBasicParameters>
-                    <p2:Duration>2</p2:Duration>
-                    <p2:Colour1>0</p2:Colour1>
-                    <p2:Colour2>0</p2:Colour2>
-                    <p2:numDots1>400</p2:numDots1>
-                    <p2:numDots2>400</p2:numDots2>
-                    <p2:dotLifeBool>0</p2:dotLifeBool>
-                    <p2:dotLifetime>20</p2:dotLifetime>
-                    <p2:Contrast>0</p2:Contrast>
-                    <p2:Coherence>25</p2:Coherence>
-                    <p2:VelX>0</p2:VelX>
-                    <p2:VelY>-10</p2:VelY>
-                    <p2:VelZ>0</p2:VelZ>
-                  </p2:MC3DBasicParameters>
-                  <p2:MC3DBasicParameters>
-                    <p2:Duration>2</p2:Duration>
-                    <p2:Colour1>0</p2:Colour1>
-                    <p2:Colour2>0</p2:Colour2>
-                    <p2:numDots1>400</p2:numDots1>
-                    <p2:numDots2>400</p2:numDots2>
-                    <p2:dotLifeBool>0</p2:dotLifeBool>
-                    <p2:dotLifetime>20</p2:dotLifetime>
-                    <p2:Contrast>0</p2:Contrast>
-                    <p2:Coherence>25</p2:Coherence>
-                    <p2:VelX>0</p2:VelX>
-                    <p2:VelY>0</p2:VelY>
-                    <p2:VelZ>10</p2:VelZ>
-                  </p2:MC3DBasicParameters>
-                  <p2:MC3DBasicParameters>
-                    <p2:Duration>2</p2:Duration>
-                    <p2:Colour1>0</p2:Colour1>
-                    <p2:Colour2>0</p2:Colour2>
-                    <p2:numDots1>400</p2:numDots1>
-                    <p2:numDots2>400</p2:numDots2>
-                    <p2:dotLifeBool>0</p2:dotLifeBool>
-                    <p2:dotLifetime>20</p2:dotLifetime>
-                    <p2:Contrast>0</p2:Contrast>
-                    <p2:Coherence>25</p2:Coherence>
-                    <p2:VelX>0</p2:VelX>
-                    <p2:VelY>0</p2:VelY>
-                    <p2:VelZ>-10</p2:VelZ>
-                  </p2:MC3DBasicParameters>
-                </p2:Trials>
-              </Combinator>
-            </Expression>
-            <Expression xsi:type="IncludeWorkflow" Path="Extensions\EnsureMC3DParams.bonsai">
-              <Duration>2</Duration>
-              <Colour1>1</Colour1>
-              <Colour2>1</Colour2>
-              <numDots1>1</numDots1>
-              <numDots2>1</numDots2>
-              <dotLifeBool>0</dotLifeBool>
-              <dotLifetime>0</dotLifetime>
-              <Contrast>0</Contrast>
-              <Coherence>100</Coherence>
-              <VelX>0</VelX>
-              <VelY>0</VelY>
-              <VelZ>0</VelZ>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="p2:MC3DBasicSpec">
-                <p2:Trials>
-                  <p2:MC3DBasicParameters>
-                    <p2:Duration>2</p2:Duration>
-                    <p2:Colour1>0</p2:Colour1>
-                    <p2:Colour2>0</p2:Colour2>
-                    <p2:numDots1>400</p2:numDots1>
-                    <p2:numDots2>400</p2:numDots2>
-                    <p2:dotLifeBool>0</p2:dotLifeBool>
-                    <p2:dotLifetime>20</p2:dotLifetime>
-                    <p2:Contrast>0</p2:Contrast>
-                    <p2:Coherence>0</p2:Coherence>
-                    <p2:VelX>10</p2:VelX>
-                    <p2:VelY>0</p2:VelY>
-                    <p2:VelZ>0</p2:VelZ>
-                  </p2:MC3DBasicParameters>
-                </p2:Trials>
-              </Combinator>
-            </Expression>
-            <Expression xsi:type="IncludeWorkflow" Path="Extensions\EnsureMC3DParams.bonsai">
-              <Duration>2</Duration>
-              <Colour1>1</Colour1>
-              <Colour2>1</Colour2>
-              <numDots1>1</numDots1>
-              <numDots2>1</numDots2>
-              <dotLifeBool>0</dotLifeBool>
-              <dotLifetime>0</dotLifetime>
-              <Contrast>0</Contrast>
-              <Coherence>100</Coherence>
-              <VelX>0</VelX>
-              <VelY>0</VelY>
-              <VelZ>0</VelZ>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="rx:Concat" />
             </Expression>
             <Expression xsi:type="SubscribeSubject">
               <Name>Random</Name>
@@ -739,7 +494,7 @@
                           </PropertyMappings>
                         </Expression>
                         <Expression xsi:type="Combinator">
-                          <Combinator xsi:type="p2:genRandVector3Array2">
+                          <Combinator xsi:type="p2:genRandVector3Array">
                             <p2:numDots>400</p2:numDots>
                             <p2:left>-60</p2:left>
                             <p2:right>60</p2:right>
@@ -747,25 +502,6 @@
                             <p2:bottom>-60</p2:bottom>
                             <p2:front>60</p2:front>
                             <p2:back>-60</p2:back>
-                          </Combinator>
-                        </Expression>
-                        <Expression xsi:type="WorkflowInput">
-                          <Name>Source1</Name>
-                        </Expression>
-                        <Expression xsi:type="MemberSelector">
-                          <Selector>Duration</Selector>
-                        </Expression>
-                        <Expression xsi:type="scr:ExpressionTransform">
-                          <scr:Expression>TimeSpan.FromSeconds(it)</scr:Expression>
-                        </Expression>
-                        <Expression xsi:type="PropertyMapping">
-                          <PropertyMappings>
-                            <Property Name="DueTime" />
-                          </PropertyMappings>
-                        </Expression>
-                        <Expression xsi:type="Combinator">
-                          <Combinator xsi:type="gl:Timer">
-                            <gl:DueTime>PT2S</gl:DueTime>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="SubscribeSubject">
@@ -1070,9 +806,9 @@
                               </Expression>
                               <Expression xsi:type="Combinator">
                                 <Combinator xsi:type="p2:moveVector3test">
-                                  <p2:VelocityX>0</p2:VelocityX>
+                                  <p2:VelocityX>0.166666672</p2:VelocityX>
                                   <p2:VelocityY>0</p2:VelocityY>
-                                  <p2:VelocityZ>0.166666672</p2:VelocityZ>
+                                  <p2:VelocityZ>0</p2:VelocityZ>
                                   <p2:Coherence>100</p2:Coherence>
                                   <p2:top>60</p2:top>
                                   <p2:bottom>-60</p2:bottom>
@@ -1096,9 +832,9 @@
                                     <Expression xsi:type="PropertySource" TypeArguments="gl:CreateLookAt,p3:Vector3">
                                       <MemberName>Eye</MemberName>
                                       <Value>
-                                        <X>1</X>
-                                        <Y>1</Y>
-                                        <Z>1</Z>
+                                        <X>0</X>
+                                        <Y>0</Y>
+                                        <Z>0</Z>
                                       </Value>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -1470,9 +1206,9 @@
                               </Expression>
                               <Expression xsi:type="Combinator">
                                 <Combinator xsi:type="p2:moveVector3test">
-                                  <p2:VelocityX>0</p2:VelocityX>
+                                  <p2:VelocityX>0.166666672</p2:VelocityX>
                                   <p2:VelocityY>0</p2:VelocityY>
-                                  <p2:VelocityZ>0.166666672</p2:VelocityZ>
+                                  <p2:VelocityZ>0</p2:VelocityZ>
                                   <p2:Coherence>100</p2:Coherence>
                                   <p2:top>60</p2:top>
                                   <p2:bottom>-60</p2:bottom>
@@ -1496,9 +1232,9 @@
                                     <Expression xsi:type="PropertySource" TypeArguments="gl:CreateLookAt,p3:Vector3">
                                       <MemberName>Eye</MemberName>
                                       <Value>
-                                        <X>0</X>
-                                        <Y>0</Y>
-                                        <Z>0</Z>
+                                        <X>1</X>
+                                        <Y>1</Y>
+                                        <Z>1</Z>
                                       </Value>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -1638,6 +1374,25 @@
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="rx:Zip" />
                         </Expression>
+                        <Expression xsi:type="WorkflowInput">
+                          <Name>Source1</Name>
+                        </Expression>
+                        <Expression xsi:type="MemberSelector">
+                          <Selector>Duration</Selector>
+                        </Expression>
+                        <Expression xsi:type="scr:ExpressionTransform">
+                          <scr:Expression>TimeSpan.FromSeconds(it)</scr:Expression>
+                        </Expression>
+                        <Expression xsi:type="PropertyMapping">
+                          <PropertyMappings>
+                            <Property Name="DueTime" />
+                          </PropertyMappings>
+                        </Expression>
+                        <Expression xsi:type="Combinator">
+                          <Combinator xsi:type="gl:Timer">
+                            <gl:DueTime>PT2S</gl:DueTime>
+                          </Combinator>
+                        </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="rx:TakeUntil" />
                         </Expression>
@@ -1651,59 +1406,6 @@
                         </Expression>
                         <Expression xsi:type="Unit" />
                         <Expression xsi:type="WorkflowOutput" />
-                        <Expression xsi:type="Combinator">
-                          <Combinator xsi:type="FloatProperty">
-                            <Value>0</Value>
-                          </Combinator>
-                        </Expression>
-                        <Expression xsi:type="SubscribeSubject">
-                          <Name>Draw3DStim</Name>
-                        </Expression>
-                        <Expression xsi:type="Combinator">
-                          <Combinator xsi:type="rx:Take">
-                            <rx:Count>1</rx:Count>
-                          </Combinator>
-                        </Expression>
-                        <Expression xsi:type="Combinator">
-                          <Combinator xsi:type="FloatProperty">
-                            <Value>1</Value>
-                          </Combinator>
-                        </Expression>
-                        <Expression xsi:type="Combinator">
-                          <Combinator xsi:type="rx:Merge" />
-                        </Expression>
-                        <Expression xsi:type="BehaviorSubject">
-                          <Name>quadState</Name>
-                        </Expression>
-                        <Expression xsi:type="SubscribeSubject">
-                          <Name>Draw3DStim</Name>
-                        </Expression>
-                        <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.OrthographicViewport.bonsai">
-                          <Left>-180</Left>
-                          <Right>180</Right>
-                          <Bottom>-90</Bottom>
-                          <Top>90</Top>
-                        </Expression>
-                        <Expression xsi:type="SubscribeSubject">
-                          <Name>quadState</Name>
-                        </Expression>
-                        <Expression xsi:type="PropertyMapping">
-                          <PropertyMappings>
-                            <Property Name="ColorR" Selector="it" />
-                            <Property Name="ColorG" Selector="it" />
-                            <Property Name="ColorB" Selector="it" />
-                          </PropertyMappings>
-                        </Expression>
-                        <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawQuad.bonsai">
-                          <ExtentX>20</ExtentX>
-                          <ExtentY>20</ExtentY>
-                          <LocationX>170</LocationX>
-                          <LocationY>70</LocationY>
-                          <ColorR>0</ColorR>
-                          <ColorG>0</ColorG>
-                          <ColorB>0</ColorB>
-                          <ColorA>1</ColorA>
-                        </Expression>
                       </Nodes>
                       <Edges>
                         <Edge From="0" To="1" Label="Source1" />
@@ -1711,62 +1413,52 @@
                         <Edge From="2" To="3" Label="Source1" />
                         <Edge From="3" To="4" Label="Source1" />
                         <Edge From="4" To="5" Label="Source2" />
-                        <Edge From="5" To="39" Label="Source1" />
+                        <Edge From="5" To="33" Label="Source1" />
                         <Edge From="6" To="7" Label="Source1" />
                         <Edge From="7" To="11" Label="Source1" />
                         <Edge From="8" To="9" Label="Source1" />
                         <Edge From="9" To="10" Label="Source1" />
                         <Edge From="10" To="11" Label="Source2" />
-                        <Edge From="11" To="38" Label="Source4" />
+                        <Edge From="11" To="34" Label="Source1" />
                         <Edge From="12" To="13" Label="Source1" />
-                        <Edge From="13" To="14" Label="Source1" />
+                        <Edge From="13" To="17" Label="Source2" />
                         <Edge From="14" To="15" Label="Source1" />
                         <Edge From="15" To="16" Label="Source1" />
-                        <Edge From="16" To="41" Label="Source2" />
+                        <Edge From="16" To="17" Label="Source1" />
+                        <Edge From="16" To="22" Label="Source2" />
+                        <Edge From="16" To="27" Label="Source2" />
                         <Edge From="17" To="18" Label="Source1" />
-                        <Edge From="18" To="22" Label="Source2" />
-                        <Edge From="19" To="20" Label="Source1" />
+                        <Edge From="18" To="19" Label="Source1" />
+                        <Edge From="19" To="33" Label="Source2" />
+                        <Edge From="19" To="34" Label="Source2" />
                         <Edge From="20" To="21" Label="Source1" />
                         <Edge From="21" To="22" Label="Source1" />
-                        <Edge From="21" To="27" Label="Source2" />
-                        <Edge From="21" To="32" Label="Source2" />
                         <Edge From="22" To="23" Label="Source1" />
                         <Edge From="23" To="24" Label="Source1" />
-                        <Edge From="24" To="38" Label="Source1" />
-                        <Edge From="24" To="39" Label="Source2" />
+                        <Edge From="24" To="33" Label="Source3" />
+                        <Edge From="24" To="34" Label="Source3" />
                         <Edge From="25" To="26" Label="Source1" />
                         <Edge From="26" To="27" Label="Source1" />
                         <Edge From="27" To="28" Label="Source1" />
                         <Edge From="28" To="29" Label="Source1" />
-                        <Edge From="29" To="38" Label="Source2" />
-                        <Edge From="29" To="39" Label="Source3" />
+                        <Edge From="29" To="33" Label="Source4" />
+                        <Edge From="29" To="34" Label="Source4" />
                         <Edge From="30" To="31" Label="Source1" />
                         <Edge From="31" To="32" Label="Source1" />
-                        <Edge From="32" To="33" Label="Source1" />
-                        <Edge From="33" To="34" Label="Source1" />
-                        <Edge From="34" To="38" Label="Source3" />
-                        <Edge From="34" To="39" Label="Source4" />
-                        <Edge From="35" To="36" Label="Source1" />
+                        <Edge From="32" To="33" Label="Source5" />
+                        <Edge From="32" To="34" Label="Source5" />
+                        <Edge From="33" To="35" Label="Source1" />
+                        <Edge From="34" To="35" Label="Source2" />
+                        <Edge From="35" To="41" Label="Source1" />
                         <Edge From="36" To="37" Label="Source1" />
-                        <Edge From="37" To="38" Label="Source5" />
-                        <Edge From="37" To="39" Label="Source5" />
-                        <Edge From="38" To="40" Label="Source2" />
+                        <Edge From="37" To="38" Label="Source1" />
+                        <Edge From="38" To="39" Label="Source1" />
                         <Edge From="39" To="40" Label="Source1" />
-                        <Edge From="40" To="41" Label="Source1" />
+                        <Edge From="40" To="41" Label="Source2" />
                         <Edge From="41" To="42" Label="Source1" />
                         <Edge From="42" To="43" Label="Source1" />
-                        <Edge From="42" To="46" Label="Source1" />
                         <Edge From="43" To="44" Label="Source1" />
                         <Edge From="44" To="45" Label="Source1" />
-                        <Edge From="46" To="50" Label="Source1" />
-                        <Edge From="47" To="48" Label="Source1" />
-                        <Edge From="48" To="49" Label="Source1" />
-                        <Edge From="49" To="50" Label="Source2" />
-                        <Edge From="50" To="51" Label="Source1" />
-                        <Edge From="52" To="53" Label="Source1" />
-                        <Edge From="53" To="56" Label="Source1" />
-                        <Edge From="54" To="55" Label="Source1" />
-                        <Edge From="55" To="56" Label="Source2" />
                       </Edges>
                     </Workflow>
                   </Expression>
@@ -1793,23 +1485,13 @@
           </Nodes>
           <Edges>
             <Edge From="0" To="1" Label="Source1" />
-            <Edge From="0" To="3" Label="Source1" />
-            <Edge From="0" To="5" Label="Source1" />
-            <Edge From="0" To="7" Label="Source1" />
             <Edge From="1" To="2" Label="Source1" />
-            <Edge From="2" To="9" Label="Source1" />
-            <Edge From="3" To="4" Label="Source1" />
-            <Edge From="4" To="9" Label="Source2" />
+            <Edge From="2" To="4" Label="Source1" />
+            <Edge From="3" To="4" Label="Source2" />
+            <Edge From="4" To="5" Label="Source1" />
             <Edge From="5" To="6" Label="Source1" />
-            <Edge From="6" To="9" Label="Source3" />
+            <Edge From="6" To="7" Label="Source1" />
             <Edge From="7" To="8" Label="Source1" />
-            <Edge From="8" To="9" Label="Source4" />
-            <Edge From="9" To="11" Label="Source1" />
-            <Edge From="10" To="11" Label="Source2" />
-            <Edge From="11" To="12" Label="Source1" />
-            <Edge From="12" To="13" Label="Source1" />
-            <Edge From="13" To="14" Label="Source1" />
-            <Edge From="14" To="15" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>

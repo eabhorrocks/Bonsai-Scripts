@@ -35,7 +35,7 @@ public class moveDots_2dLife
             float nDotsf = pos.Length;   
             int nDots = pos.Length;         
             float nCohf = nDotsf/100f * Coherence;
-            int nCoh = (int)Math.Ceiling(nCohf);
+            int nCoh = (int)Math.Floor(nCohf);
             
             //Console.WriteLine("coh: " + Coherence);
             //Console.WriteLine("nDots: " + nDots);
