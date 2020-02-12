@@ -22,8 +22,8 @@
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="p2:CreateNormal">
-          <p2:Mean>50</p2:Mean>
-          <p2:StdDev>20</p2:StdDev>
+          <p2:Mean>200</p2:Mean>
+          <p2:StdDev>50</p2:StdDev>
         </Combinator>
       </Expression>
       <Expression xsi:type="Combinator">
@@ -34,7 +34,7 @@
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="p3:roundToNearestVal">
-          <p3:roundVal>2.5</p3:roundVal>
+          <p3:roundVal>10</p3:roundVal>
         </Combinator>
       </Expression>
       <Expression xsi:type="ExternalizedMapping">
@@ -46,9 +46,7 @@
         </Combinator>
       </Expression>
       <Expression xsi:type="Combinator">
-        <Combinator xsi:type="rx:RepeatCount">
-          <rx:Count>500</rx:Count>
-        </Combinator>
+        <Combinator xsi:type="rx:Repeat" />
       </Expression>
       <Expression xsi:type="WorkflowOutput" />
     </Nodes>

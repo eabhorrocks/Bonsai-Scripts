@@ -26,7 +26,7 @@ public class wrapAroundDots
 
             for (int i=0; i < nDots; i++)
             {
-            if(dotPos[i].X >= borders[1]) {dotPos[i].X = dotPos[i].X - (borders[1] - borders[0]);}
+            if(dotPos[i].X >= borders[1]) {dotPos[i].X = dotPos[i].X - (borders[1] - borders[0]);} // add shuffle on other axis?
             else if(dotPos[i].X <= borders[0]) {dotPos[i].X = dotPos[i].X + (borders[1] - borders[0]);}
             if(dotPos[i].Y >= borders[2]){dotPos[i].Y = dotPos[i].Y - (borders[2] - borders[3]);}
             else if(dotPos[i].Y <= borders[3]) {dotPos[i].Y = dotPos[i].Y + (borders[2] - borders[3]);}

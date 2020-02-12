@@ -7,6 +7,7 @@
                  xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
                  xmlns:p2="clr-namespace:;assembly=Extensions"
                  xmlns:scr="clr-namespace:Bonsai.Scripting;assembly=Bonsai.Scripting"
+                 xmlns:p3="clr-namespace:Bonsai.Numerics.Distributions;assembly=Bonsai.Numerics"
                  xmlns:sys="clr-namespace:System;assembly=mscorlib"
                  xmlns:wie="clr-namespace:Bonsai.Windows.Input;assembly=Bonsai.Windows.Input"
                  xmlns:io="clr-namespace:Bonsai.IO;assembly=Bonsai.System"
@@ -142,7 +143,7 @@
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="p1:CreateRandom">
-          <p1:Seed>1</p1:Seed>
+          <p1:Seed>42</p1:Seed>
         </Combinator>
       </Expression>
       <Expression xsi:type="AsyncSubject">
@@ -226,8 +227,8 @@
                     <p2:Colour2>1</p2:Colour2>
                     <p2:numDots1>412</p2:numDots1>
                     <p2:numDots2>412</p2:numDots2>
-                    <p2:dotLifeBool>0</p2:dotLifeBool>
-                    <p2:dotLifetime>20</p2:dotLifetime>
+                    <p2:dotLifeBool>1</p2:dotLifeBool>
+                    <p2:dotLifetime>800</p2:dotLifetime>
                     <p2:Contrast>1</p2:Contrast>
                     <p2:VelocityXLeft>0</p2:VelocityXLeft>
                     <p2:VelocityYLeft>0</p2:VelocityYLeft>
@@ -648,7 +649,54 @@ Item4.Item2 as transXR)</scr:Expression>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="ExternalizedMapping">
-                          <Property Name="Value" DisplayName="mean1" />
+                          <Property Name="Value" DisplayName="l1" />
+                        </Expression>
+                        <Expression xsi:type="Combinator">
+                          <Combinator xsi:type="FloatProperty">
+                            <Value>10</Value>
+                          </Combinator>
+                        </Expression>
+                        <Expression xsi:type="ExternalizedMapping">
+                          <Property Name="Value" DisplayName="l2" />
+                        </Expression>
+                        <Expression xsi:type="Combinator">
+                          <Combinator xsi:type="FloatProperty">
+                            <Value>10</Value>
+                          </Combinator>
+                        </Expression>
+                        <Expression xsi:type="Combinator">
+                          <Combinator xsi:type="rx:Delay">
+                            <rx:DueTime>PT5M</rx:DueTime>
+                          </Combinator>
+                        </Expression>
+                        <Expression xsi:type="ExternalizedMapping">
+                          <Property Name="Value" DisplayName="l3" />
+                        </Expression>
+                        <Expression xsi:type="Combinator">
+                          <Combinator xsi:type="FloatProperty">
+                            <Value>-350</Value>
+                          </Combinator>
+                        </Expression>
+                        <Expression xsi:type="Combinator">
+                          <Combinator xsi:type="rx:Delay">
+                            <rx:DueTime>PT15M</rx:DueTime>
+                          </Combinator>
+                        </Expression>
+                        <Expression xsi:type="ExternalizedMapping">
+                          <Property Name="Value" DisplayName="l4" />
+                        </Expression>
+                        <Expression xsi:type="Combinator">
+                          <Combinator xsi:type="FloatProperty">
+                            <Value>10</Value>
+                          </Combinator>
+                        </Expression>
+                        <Expression xsi:type="Combinator">
+                          <Combinator xsi:type="rx:Delay">
+                            <rx:DueTime>PT25M</rx:DueTime>
+                          </Combinator>
+                        </Expression>
+                        <Expression xsi:type="ExternalizedMapping">
+                          <Property Name="Value" DisplayName="u1" />
                         </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="FloatProperty">
@@ -656,93 +704,33 @@ Item4.Item2 as transXR)</scr:Expression>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="ExternalizedMapping">
-                          <Property Name="Value" DisplayName="mean2" />
+                          <Property Name="Value" DisplayName="u2" />
                         </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="FloatProperty">
-                            <Value>400</Value>
+                            <Value>710</Value>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="rx:Delay">
-                            <rx:DueTime>PT1M</rx:DueTime>
+                            <rx:DueTime>PT5M</rx:DueTime>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="ExternalizedMapping">
-                          <Property Name="Value" DisplayName="mean3" />
+                          <Property Name="Value" DisplayName="u3" />
                         </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="FloatProperty">
-                            <Value>400</Value>
+                            <Value>350</Value>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="rx:Delay">
-                            <rx:DueTime>PT2M</rx:DueTime>
+                            <rx:DueTime>PT15M</rx:DueTime>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="ExternalizedMapping">
-                          <Property Name="Value" DisplayName="mean4" />
-                        </Expression>
-                        <Expression xsi:type="Combinator">
-                          <Combinator xsi:type="FloatProperty">
-                            <Value>200</Value>
-                          </Combinator>
-                        </Expression>
-                        <Expression xsi:type="Combinator">
-                          <Combinator xsi:type="rx:Delay">
-                            <rx:DueTime>PT3M</rx:DueTime>
-                          </Combinator>
-                        </Expression>
-                        <Expression xsi:type="ExternalizedMapping">
-                          <Property Name="Value" DisplayName="std1" />
-                        </Expression>
-                        <Expression xsi:type="Combinator">
-                          <Combinator xsi:type="FloatProperty">
-                            <Value>100</Value>
-                          </Combinator>
-                        </Expression>
-                        <Expression xsi:type="ExternalizedMapping">
-                          <Property Name="Value" DisplayName="std2" />
-                        </Expression>
-                        <Expression xsi:type="Combinator">
-                          <Combinator xsi:type="FloatProperty">
-                            <Value>100</Value>
-                          </Combinator>
-                        </Expression>
-                        <Expression xsi:type="Combinator">
-                          <Combinator xsi:type="rx:Delay">
-                            <rx:DueTime>PT1M</rx:DueTime>
-                          </Combinator>
-                        </Expression>
-                        <Expression xsi:type="ExternalizedMapping">
-                          <Property Name="Value" DisplayName="std3" />
-                        </Expression>
-                        <Expression xsi:type="Combinator">
-                          <Combinator xsi:type="FloatProperty">
-                            <Value>200</Value>
-                          </Combinator>
-                        </Expression>
-                        <Expression xsi:type="Combinator">
-                          <Combinator xsi:type="rx:Delay">
-                            <rx:DueTime>PT2M</rx:DueTime>
-                          </Combinator>
-                        </Expression>
-                        <Expression xsi:type="ExternalizedMapping">
-                          <Property Name="Value" DisplayName="std4" />
-                        </Expression>
-                        <Expression xsi:type="Combinator">
-                          <Combinator xsi:type="FloatProperty">
-                            <Value>200</Value>
-                          </Combinator>
-                        </Expression>
-                        <Expression xsi:type="Combinator">
-                          <Combinator xsi:type="rx:Delay">
-                            <rx:DueTime>PT3M</rx:DueTime>
-                          </Combinator>
-                        </Expression>
-                        <Expression xsi:type="ExternalizedMapping">
-                          <Property Name="Value" DisplayName="mean5" />
+                          <Property Name="Value" DisplayName="u4" />
                         </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="FloatProperty">
@@ -751,47 +739,117 @@ Item4.Item2 as transXR)</scr:Expression>
                         </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="rx:Delay">
-                            <rx:DueTime>PT4M</rx:DueTime>
+                            <rx:DueTime>PT25M</rx:DueTime>
+                          </Combinator>
+                        </Expression>
+                        <Expression xsi:type="ExternalizedMapping">
+                          <Property Name="Value" DisplayName="l5" />
+                        </Expression>
+                        <Expression xsi:type="Combinator">
+                          <Combinator xsi:type="FloatProperty">
+                            <Value>0</Value>
+                          </Combinator>
+                        </Expression>
+                        <Expression xsi:type="Combinator">
+                          <Combinator xsi:type="rx:Delay">
+                            <rx:DueTime>PT30M</rx:DueTime>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="rx:Merge" />
                         </Expression>
-                        <Expression xsi:type="PropertyMapping">
-                          <PropertyMappings>
-                            <Property Name="Mean" />
-                          </PropertyMappings>
-                        </Expression>
                         <Expression xsi:type="ExternalizedMapping">
-                          <Property Name="Value" DisplayName="std5" />
+                          <Property Name="Value" DisplayName="u5" />
                         </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="FloatProperty">
-                            <Value>200</Value>
+                            <Value>0</Value>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="rx:Delay">
-                            <rx:DueTime>PT4M</rx:DueTime>
+                            <rx:DueTime>PT30M</rx:DueTime>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="rx:Merge" />
                         </Expression>
+                        <Expression xsi:type="Combinator">
+                          <Combinator xsi:type="rx:Zip" />
+                        </Expression>
                         <Expression xsi:type="PropertyMapping">
                           <PropertyMappings>
-                            <Property Name="StdDev" />
+                            <Property Name="Lower" />
+                          </PropertyMappings>
+                        </Expression>
+                        <Expression xsi:type="PropertyMapping">
+                          <PropertyMappings>
+                            <Property Name="Upper" />
                           </PropertyMappings>
                         </Expression>
                         <Expression xsi:type="ExternalizedMapping">
-                          <Property Name="DueTime" />
                           <Property Name="roundVal" />
+                          <Property Name="DueTime" />
                         </Expression>
-                        <Expression xsi:type="IncludeWorkflow" Path="Extensions\genPeriodicRandomVals.bonsai">
-                          <Mean>400</Mean>
-                          <StdDev>100</StdDev>
-                          <roundVal>2.5</roundVal>
-                          <DueTime>PT0.5S</DueTime>
+                        <Expression xsi:type="GroupWorkflow">
+                          <Name>genPeriodicRandomUniVals</Name>
+                          <Workflow>
+                            <Nodes>
+                              <Expression xsi:type="WorkflowInput">
+                                <Name>Source1</Name>
+                              </Expression>
+                              <Expression xsi:type="Combinator">
+                                <Combinator xsi:type="p1:CreateRandom">
+                                  <p1:Seed xsi:nil="true" />
+                                </Combinator>
+                              </Expression>
+                              <Expression xsi:type="ExternalizedMapping">
+                                <Property Name="roundVal" />
+                              </Expression>
+                              <Expression xsi:type="ExternalizedMapping">
+                                <Property Name="DueTime" />
+                              </Expression>
+                              <Expression xsi:type="ExternalizedMapping">
+                                <Property Name="Lower" />
+                                <Property Name="Upper" />
+                              </Expression>
+                              <Expression xsi:type="Combinator">
+                                <Combinator xsi:type="p3:CreateDiscreteUniform">
+                                  <p3:Lower>10</p3:Lower>
+                                  <p3:Upper>200</p3:Upper>
+                                </Combinator>
+                              </Expression>
+                              <Expression xsi:type="Combinator">
+                                <Combinator xsi:type="p3:Sample" />
+                              </Expression>
+                              <Expression xsi:type="Combinator">
+                                <Combinator xsi:type="p2:roundToNearestVal">
+                                  <p2:roundVal>20</p2:roundVal>
+                                </Combinator>
+                              </Expression>
+                              <Expression xsi:type="Combinator">
+                                <Combinator xsi:type="rx:Delay">
+                                  <rx:DueTime>PT0.5S</rx:DueTime>
+                                </Combinator>
+                              </Expression>
+                              <Expression xsi:type="Combinator">
+                                <Combinator xsi:type="rx:Repeat" />
+                              </Expression>
+                              <Expression xsi:type="WorkflowOutput" />
+                            </Nodes>
+                            <Edges>
+                              <Edge From="0" To="1" Label="Source1" />
+                              <Edge From="1" To="5" Label="Source1" />
+                              <Edge From="2" To="7" Label="Source2" />
+                              <Edge From="3" To="8" Label="Source2" />
+                              <Edge From="4" To="5" Label="Source2" />
+                              <Edge From="5" To="6" Label="Source1" />
+                              <Edge From="6" To="7" Label="Source1" />
+                              <Edge From="7" To="8" Label="Source1" />
+                              <Edge From="8" To="9" Label="Source1" />
+                              <Edge From="9" To="10" Label="Source1" />
+                            </Edges>
+                          </Workflow>
                         </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="rx:CombineLatest" />
@@ -957,7 +1015,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p2:GenerateDotLives">
-                                        <p2:dotLifetime>20</p2:dotLifetime>
+                                        <p2:dotLifetime>800</p2:dotLifetime>
                                         <p2:numDots>206</p2:numDots>
                                       </Combinator>
                                     </Expression>
@@ -972,7 +1030,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-6.70833349</Value>
+                                        <Value>-2.66666675</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="PropertyMapping">
@@ -1121,11 +1179,11 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p2:moveDots_2dLife">
-                                        <p2:VelocityX>-6.70833349</p2:VelocityX>
+                                        <p2:VelocityX>-2.66666675</p2:VelocityX>
                                         <p2:VelocityY>0</p2:VelocityY>
                                         <p2:Coherence>100</p2:Coherence>
-                                        <p2:dotLifetimeBool>0</p2:dotLifetimeBool>
-                                        <p2:dotLifetime>20</p2:dotLifetime>
+                                        <p2:dotLifetimeBool>1</p2:dotLifetimeBool>
+                                        <p2:dotLifetime>800</p2:dotLifetime>
                                         <p2:left>-180</p2:left>
                                         <p2:right>180</p2:right>
                                         <p2:top>90</p2:top>
@@ -1286,7 +1344,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p2:GenerateDotLives">
-                                        <p2:dotLifetime>20</p2:dotLifetime>
+                                        <p2:dotLifetime>800</p2:dotLifetime>
                                         <p2:numDots>206</p2:numDots>
                                       </Combinator>
                                     </Expression>
@@ -1298,7 +1356,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-6.70833349</Value>
+                                        <Value>-2.66666675</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="PropertyMapping">
@@ -1444,11 +1502,11 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p2:moveDots_2dLife">
-                                        <p2:VelocityX>-6.70833349</p2:VelocityX>
+                                        <p2:VelocityX>-2.66666675</p2:VelocityX>
                                         <p2:VelocityY>0</p2:VelocityY>
                                         <p2:Coherence>100</p2:Coherence>
-                                        <p2:dotLifetimeBool>0</p2:dotLifetimeBool>
-                                        <p2:dotLifetime>20</p2:dotLifetime>
+                                        <p2:dotLifetimeBool>1</p2:dotLifetimeBool>
+                                        <p2:dotLifetime>800</p2:dotLifetime>
                                         <p2:left>-180</p2:left>
                                         <p2:right>180</p2:right>
                                         <p2:top>90</p2:top>
@@ -1610,7 +1668,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p2:GenerateDotLives">
-                                        <p2:dotLifetime>20</p2:dotLifetime>
+                                        <p2:dotLifetime>800</p2:dotLifetime>
                                         <p2:numDots>206</p2:numDots>
                                       </Combinator>
                                     </Expression>
@@ -1622,7 +1680,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-6.70833349</Value>
+                                        <Value>-2.66666675</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="PropertyMapping">
@@ -1768,11 +1826,11 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p2:moveDots_2dLife">
-                                        <p2:VelocityX>-6.70833349</p2:VelocityX>
+                                        <p2:VelocityX>-2.66666675</p2:VelocityX>
                                         <p2:VelocityY>0</p2:VelocityY>
                                         <p2:Coherence>100</p2:Coherence>
-                                        <p2:dotLifetimeBool>0</p2:dotLifetimeBool>
-                                        <p2:dotLifetime>20</p2:dotLifetime>
+                                        <p2:dotLifetimeBool>1</p2:dotLifetimeBool>
+                                        <p2:dotLifetime>800</p2:dotLifetime>
                                         <p2:left>-180</p2:left>
                                         <p2:right>180</p2:right>
                                         <p2:top>90</p2:top>
@@ -1929,7 +1987,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p2:GenerateDotLives">
-                                        <p2:dotLifetime>20</p2:dotLifetime>
+                                        <p2:dotLifetime>800</p2:dotLifetime>
                                         <p2:numDots>206</p2:numDots>
                                       </Combinator>
                                     </Expression>
@@ -1941,7 +1999,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-6.70833349</Value>
+                                        <Value>-2.66666675</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="PropertyMapping">
@@ -2090,11 +2148,11 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p2:moveDots_2dLife">
-                                        <p2:VelocityX>-6.70833349</p2:VelocityX>
+                                        <p2:VelocityX>-2.66666675</p2:VelocityX>
                                         <p2:VelocityY>0</p2:VelocityY>
                                         <p2:Coherence>100</p2:Coherence>
-                                        <p2:dotLifetimeBool>0</p2:dotLifetimeBool>
-                                        <p2:dotLifetime>20</p2:dotLifetime>
+                                        <p2:dotLifetimeBool>1</p2:dotLifetimeBool>
+                                        <p2:dotLifetime>800</p2:dotLifetime>
                                         <p2:left>-180</p2:left>
                                         <p2:right>180</p2:right>
                                         <p2:top>90</p2:top>
@@ -2350,7 +2408,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p2:GenerateDotLives">
-                                        <p2:dotLifetime>20</p2:dotLifetime>
+                                        <p2:dotLifetime>800</p2:dotLifetime>
                                         <p2:numDots>206</p2:numDots>
                                       </Combinator>
                                     </Expression>
@@ -2365,7 +2423,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-6.70833349</Value>
+                                        <Value>-2.66666675</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="PropertyMapping">
@@ -2514,11 +2572,11 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p2:moveDots_2dLife">
-                                        <p2:VelocityX>-6.70833349</p2:VelocityX>
+                                        <p2:VelocityX>-2.66666675</p2:VelocityX>
                                         <p2:VelocityY>0</p2:VelocityY>
                                         <p2:Coherence>100</p2:Coherence>
-                                        <p2:dotLifetimeBool>0</p2:dotLifetimeBool>
-                                        <p2:dotLifetime>20</p2:dotLifetime>
+                                        <p2:dotLifetimeBool>1</p2:dotLifetimeBool>
+                                        <p2:dotLifetime>800</p2:dotLifetime>
                                         <p2:left>-180</p2:left>
                                         <p2:right>180</p2:right>
                                         <p2:top>90</p2:top>
@@ -2679,7 +2737,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p2:GenerateDotLives">
-                                        <p2:dotLifetime>20</p2:dotLifetime>
+                                        <p2:dotLifetime>800</p2:dotLifetime>
                                         <p2:numDots>206</p2:numDots>
                                       </Combinator>
                                     </Expression>
@@ -2691,7 +2749,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-6.70833349</Value>
+                                        <Value>-2.66666675</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="PropertyMapping">
@@ -2837,11 +2895,11 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p2:moveDots_2dLife">
-                                        <p2:VelocityX>-6.70833349</p2:VelocityX>
+                                        <p2:VelocityX>-2.66666675</p2:VelocityX>
                                         <p2:VelocityY>0</p2:VelocityY>
                                         <p2:Coherence>100</p2:Coherence>
-                                        <p2:dotLifetimeBool>0</p2:dotLifetimeBool>
-                                        <p2:dotLifetime>20</p2:dotLifetime>
+                                        <p2:dotLifetimeBool>1</p2:dotLifetimeBool>
+                                        <p2:dotLifetime>800</p2:dotLifetime>
                                         <p2:left>-180</p2:left>
                                         <p2:right>180</p2:right>
                                         <p2:top>90</p2:top>
@@ -3003,7 +3061,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p2:GenerateDotLives">
-                                        <p2:dotLifetime>20</p2:dotLifetime>
+                                        <p2:dotLifetime>800</p2:dotLifetime>
                                         <p2:numDots>206</p2:numDots>
                                       </Combinator>
                                     </Expression>
@@ -3015,7 +3073,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-6.70833349</Value>
+                                        <Value>-2.66666675</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="PropertyMapping">
@@ -3161,11 +3219,11 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p2:moveDots_2dLife">
-                                        <p2:VelocityX>-6.70833349</p2:VelocityX>
+                                        <p2:VelocityX>-2.66666675</p2:VelocityX>
                                         <p2:VelocityY>0</p2:VelocityY>
                                         <p2:Coherence>100</p2:Coherence>
-                                        <p2:dotLifetimeBool>0</p2:dotLifetimeBool>
-                                        <p2:dotLifetime>20</p2:dotLifetime>
+                                        <p2:dotLifetimeBool>1</p2:dotLifetimeBool>
+                                        <p2:dotLifetime>800</p2:dotLifetime>
                                         <p2:left>-180</p2:left>
                                         <p2:right>180</p2:right>
                                         <p2:top>90</p2:top>
@@ -3322,7 +3380,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p2:GenerateDotLives">
-                                        <p2:dotLifetime>20</p2:dotLifetime>
+                                        <p2:dotLifetime>800</p2:dotLifetime>
                                         <p2:numDots>206</p2:numDots>
                                       </Combinator>
                                     </Expression>
@@ -3334,7 +3392,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-6.70833349</Value>
+                                        <Value>-2.66666675</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="PropertyMapping">
@@ -3483,11 +3541,11 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p2:moveDots_2dLife">
-                                        <p2:VelocityX>-6.70833349</p2:VelocityX>
+                                        <p2:VelocityX>-2.66666675</p2:VelocityX>
                                         <p2:VelocityY>0</p2:VelocityY>
                                         <p2:Coherence>100</p2:Coherence>
-                                        <p2:dotLifetimeBool>0</p2:dotLifetimeBool>
-                                        <p2:dotLifetime>20</p2:dotLifetime>
+                                        <p2:dotLifetimeBool>1</p2:dotLifetimeBool>
+                                        <p2:dotLifetime>800</p2:dotLifetime>
                                         <p2:left>-180</p2:left>
                                         <p2:right>180</p2:right>
                                         <p2:top>90</p2:top>
@@ -3658,9 +3716,6 @@ Item4.Item2 as transXR)</scr:Expression>
                         </Expression>
                         <Expression xsi:type="BehaviorSubject">
                           <Name>quadState</Name>
-                        </Expression>
-                        <Expression xsi:type="Combinator">
-                          <Combinator xsi:type="rx:Zip" />
                         </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="rx:Zip" />
@@ -3953,35 +4008,35 @@ Item4.Item2 as transXR)</scr:Expression>
                           <ExtentY>20</ExtentY>
                           <LocationX>170</LocationX>
                           <LocationY>70</LocationY>
-                          <ColorR>0</ColorR>
-                          <ColorG>0</ColorG>
-                          <ColorB>0</ColorB>
+                          <ColorR>1</ColorR>
+                          <ColorG>1</ColorG>
+                          <ColorB>1</ColorB>
                           <ColorA>1</ColorA>
                         </Expression>
                       </Nodes>
                       <Edges>
                         <Edge From="0" To="1" Label="Source1" />
-                        <Edge From="1" To="64" Label="Source2" />
-                        <Edge From="1" To="67" Label="Source2" />
+                        <Edge From="1" To="65" Label="Source2" />
+                        <Edge From="1" To="68" Label="Source2" />
                         <Edge From="2" To="3" Label="Source1" />
                         <Edge From="3" To="5" Label="Source1" />
                         <Edge From="4" To="5" Label="Source2" />
-                        <Edge From="5" To="67" Label="Source1" />
-                        <Edge From="5" To="64" Label="Source1" />
+                        <Edge From="5" To="68" Label="Source1" />
+                        <Edge From="5" To="65" Label="Source1" />
                         <Edge From="6" To="7" Label="Source1" />
                         <Edge From="7" To="8" Label="Source1" />
-                        <Edge From="8" To="50" Label="Source1" />
-                        <Edge From="8" To="54" Label="Source1" />
-                        <Edge From="8" To="58" Label="Source1" />
-                        <Edge From="8" To="61" Label="Source1" />
+                        <Edge From="8" To="51" Label="Source1" />
+                        <Edge From="8" To="55" Label="Source1" />
+                        <Edge From="8" To="59" Label="Source1" />
+                        <Edge From="8" To="62" Label="Source1" />
                         <Edge From="9" To="10" Label="Source1" />
                         <Edge From="10" To="11" Label="Source1" />
-                        <Edge From="11" To="64" Label="Source4" />
+                        <Edge From="11" To="65" Label="Source4" />
                         <Edge From="12" To="13" Label="Source1" />
                         <Edge From="13" To="14" Label="Source1" />
-                        <Edge From="14" To="67" Label="Source4" />
-                        <Edge From="15" To="61" Label="Source2" />
-                        <Edge From="15" To="58" Label="Source2" />
+                        <Edge From="14" To="68" Label="Source4" />
+                        <Edge From="15" To="62" Label="Source2" />
+                        <Edge From="15" To="59" Label="Source2" />
                         <Edge From="16" To="17" Label="Source1" />
                         <Edge From="17" To="41" Label="Source1" />
                         <Edge From="18" To="19" Label="Source1" />
@@ -3994,64 +4049,64 @@ Item4.Item2 as transXR)</scr:Expression>
                         <Edge From="25" To="26" Label="Source1" />
                         <Edge From="26" To="41" Label="Source4" />
                         <Edge From="27" To="28" Label="Source1" />
-                        <Edge From="28" To="46" Label="Source1" />
+                        <Edge From="28" To="45" Label="Source1" />
                         <Edge From="29" To="30" Label="Source1" />
                         <Edge From="30" To="31" Label="Source1" />
-                        <Edge From="31" To="46" Label="Source2" />
+                        <Edge From="31" To="45" Label="Source2" />
                         <Edge From="32" To="33" Label="Source1" />
                         <Edge From="33" To="34" Label="Source1" />
-                        <Edge From="34" To="46" Label="Source3" />
+                        <Edge From="34" To="45" Label="Source3" />
                         <Edge From="35" To="36" Label="Source1" />
                         <Edge From="36" To="37" Label="Source1" />
-                        <Edge From="37" To="46" Label="Source4" />
+                        <Edge From="37" To="45" Label="Source4" />
                         <Edge From="38" To="39" Label="Source1" />
                         <Edge From="39" To="40" Label="Source1" />
                         <Edge From="40" To="41" Label="Source5" />
-                        <Edge From="41" To="42" Label="Source1" />
-                        <Edge From="41" To="81" Label="Source1" />
-                        <Edge From="42" To="49" Label="Source1" />
+                        <Edge From="41" To="46" Label="Source1" />
+                        <Edge From="41" To="47" Label="Source1" />
+                        <Edge From="42" To="43" Label="Source1" />
                         <Edge From="43" To="44" Label="Source1" />
-                        <Edge From="44" To="45" Label="Source1" />
-                        <Edge From="45" To="46" Label="Source5" />
-                        <Edge From="46" To="81" Label="Source2" />
-                        <Edge From="46" To="47" Label="Source1" />
-                        <Edge From="47" To="49" Label="Source2" />
-                        <Edge From="48" To="49" Label="Source3" />
-                        <Edge From="49" To="50" Label="Source2" />
-                        <Edge From="49" To="54" Label="Source2" />
-                        <Edge From="49" To="70" Label="Source1" />
-                        <Edge From="49" To="74" Label="Source1" />
-                        <Edge From="49" To="80" Label="Source2" />
-                        <Edge From="50" To="51" Label="Source1" />
+                        <Edge From="44" To="45" Label="Source5" />
+                        <Edge From="45" To="46" Label="Source2" />
+                        <Edge From="45" To="48" Label="Source1" />
+                        <Edge From="46" To="82" Label="Source2" />
+                        <Edge From="47" To="50" Label="Source1" />
+                        <Edge From="48" To="50" Label="Source2" />
+                        <Edge From="49" To="50" Label="Source3" />
+                        <Edge From="50" To="51" Label="Source2" />
+                        <Edge From="50" To="55" Label="Source2" />
+                        <Edge From="50" To="71" Label="Source1" />
+                        <Edge From="50" To="75" Label="Source1" />
+                        <Edge From="50" To="81" Label="Source2" />
                         <Edge From="51" To="52" Label="Source1" />
                         <Edge From="52" To="53" Label="Source1" />
-                        <Edge From="53" To="64" Label="Source3" />
-                        <Edge From="54" To="55" Label="Source1" />
+                        <Edge From="53" To="54" Label="Source1" />
+                        <Edge From="54" To="65" Label="Source3" />
                         <Edge From="55" To="56" Label="Source1" />
                         <Edge From="56" To="57" Label="Source1" />
-                        <Edge From="57" To="67" Label="Source3" />
-                        <Edge From="58" To="59" Label="Source1" />
+                        <Edge From="57" To="58" Label="Source1" />
+                        <Edge From="58" To="68" Label="Source3" />
                         <Edge From="59" To="60" Label="Source1" />
-                        <Edge From="60" To="64" Label="Source5" />
-                        <Edge From="61" To="62" Label="Source1" />
+                        <Edge From="60" To="61" Label="Source1" />
+                        <Edge From="61" To="65" Label="Source5" />
                         <Edge From="62" To="63" Label="Source1" />
-                        <Edge From="63" To="67" Label="Source5" />
-                        <Edge From="64" To="65" Label="Source1" />
+                        <Edge From="63" To="64" Label="Source1" />
+                        <Edge From="64" To="68" Label="Source5" />
                         <Edge From="65" To="66" Label="Source1" />
-                        <Edge From="67" To="68" Label="Source1" />
+                        <Edge From="66" To="67" Label="Source1" />
                         <Edge From="68" To="69" Label="Source1" />
-                        <Edge From="70" To="71" Label="Source1" />
+                        <Edge From="69" To="70" Label="Source1" />
                         <Edge From="71" To="72" Label="Source1" />
                         <Edge From="72" To="73" Label="Source1" />
-                        <Edge From="73" To="78" Label="Source1" />
-                        <Edge From="74" To="75" Label="Source1" />
+                        <Edge From="73" To="74" Label="Source1" />
+                        <Edge From="74" To="79" Label="Source1" />
                         <Edge From="75" To="76" Label="Source1" />
                         <Edge From="76" To="77" Label="Source1" />
-                        <Edge From="77" To="78" Label="Source2" />
-                        <Edge From="78" To="79" Label="Source1" />
+                        <Edge From="77" To="78" Label="Source1" />
+                        <Edge From="78" To="79" Label="Source2" />
                         <Edge From="79" To="80" Label="Source1" />
-                        <Edge From="80" To="82" Label="Source1" />
-                        <Edge From="81" To="82" Label="Source2" />
+                        <Edge From="80" To="81" Label="Source1" />
+                        <Edge From="81" To="82" Label="Source1" />
                         <Edge From="82" To="83" Label="Source1" />
                         <Edge From="84" To="85" Label="Source1" />
                         <Edge From="84" To="109" Label="Source1" />
