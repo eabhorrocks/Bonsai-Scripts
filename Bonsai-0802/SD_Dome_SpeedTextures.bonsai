@@ -23,8 +23,8 @@
           <gl:ClearMask>DepthBufferBit ColorBufferBit</gl:ClearMask>
           <gl:CursorVisible>true</gl:CursorVisible>
           <gl:Location xsi:nil="true" />
-          <gl:WindowBorder>Hidden</gl:WindowBorder>
-          <gl:WindowState>Fullscreen</gl:WindowState>
+          <gl:WindowBorder>Fixed</gl:WindowBorder>
+          <gl:WindowState>Maximized</gl:WindowState>
           <gl:DisplayDevice>Second</gl:DisplayDevice>
           <gl:TargetRenderFrequency>60</gl:TargetRenderFrequency>
           <gl:RenderState />
